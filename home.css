@@ -28,8 +28,12 @@ body {
 }
 
 .button {
-    background-color: firebrick;
+    background-color: black;
     border-radius: 10px;
+}
+
+.button:hover {
+    background-color: firebrick;
 }
 
 #lhp {

@@ -32,7 +32,8 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color:rgba(188, 186, 137, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* rgba(188, 186, 137, 0.5); */
     border-radius: 20px;
     box-shadow: 1px 1px 60px 2px darkslategray;
 }
@@ -42,7 +43,11 @@ button {
     border-width: 0px;
     border-color: black;
     border-radius: 15px;
-    box-shadow: 1px 1px 60px 2px darkslategray;
+    box-shadow: 1px 1px 60px 2px lightslategray;
+}
+
+button:hover {
+    box-shadow: 1px 1px 10px 1px white; 
 }
 
 .top { 
@@ -69,6 +74,9 @@ img#logo {
     animation-duration: 1.5s;
     animation-name: floatin;
 }
+img#logo:hover {
+    box-shadow: 1px 1px 20px 1px black;
+}
 @keyframes floatin {
     from { margin-left: -350%; }
     to { margin-left: 0%; }
@@ -88,7 +96,8 @@ a {
     text-decoration: none;
     animation-duration: .75s;
     animation-name: zoomin;
-    text-shadow: 1px 1px 1px firebrick;
+    text-shadow: 1px 1px 1px black; 
+    /* rgb(178, 34, 34); */
     color: firebrick;
 } 
 @keyframes zoomin {
