@@ -1,0 +1,39 @@
+body {
+    background-color: whitesmoke;
+}
+
+.title-bar .menu-icon {
+    margin-right: 10px;
+}
+
+.dropdown.menu a {
+    color: black;
+}
+
+/* .top-bar-left a:hover {
+    color: rgb(23, 121, 186);
+} */
+
+.dropdown.menu a:hover, 
+.is-dropdown-submenu-parent.is-active a#drop-parent {
+    color: firebrick;
+}
+
+.dropdown.menu li.is-dropdown-submenu-parent a::after {
+    border-top-color: firebrick;
+}
+
+.menu input {
+    border-radius: 10px;
+}
+
+.button {
+    background-color: firebrick;
+    border-radius: 10px;
+}
+
+#lhp {
+    margin: 0px;
+    padding: 0px;
+}
+

@@ -1,0 +1,46 @@
+const element = document.getElementById("logo");
+const newsLink = document.getElementById("news");
+const catLink = document.getElementById("cat");
+const aboutLink = document.getElementById("about");
+const subLink = document.getElementById("sub");
+
+// element.addEventListener("animationstart", listener, false);
+element.addEventListener("animationend", () => {
+    newsLink.setAttribute("style", "font-size: 2px;");
+    catLink.setAttribute("style", "font-size: 2px;");
+    subLink.setAttribute("style", "font-size: 2px;");
+    aboutLink.setAttribute("style", "font-size: 2px;");
+    newsLink.classList.remove("hide");
+    catLink.classList.remove("hide");
+    subLink.classList.remove("hide");
+    aboutLink.classList.remove("hide");
+
+});
+
+newsLink.addEventListener("animationend", () => {
+    newsLink.removeAttribute("style");
+    catLink.removeAttribute("style");
+    subLink.removeAttribute("style");
+    aboutLink.removeAttribute("style");
+});
+
+
+// element.addEventListener("animationiteration", listener, false);
+
+// element.className = "slidein";
+
+// function listener(event) {
+    // var l = document.createElement("li");
+//     switch(event.type) {
+//       case "animationstart":
+//         l.textContent = `Started: elapsed time is ${event.elapsedTime}`;
+//         break;
+//       case "animationend":
+//         l.textContent = `Ended: elapsed time is ${event.elapsedTime}`;
+//         break;
+//       case "animationiteration":
+//         l.textContent = `New loop started at time ${event.elapsedTime}`;
+//         break;
+//     }
+//     document.getElementById("output").appendChild(l);
+//   }
