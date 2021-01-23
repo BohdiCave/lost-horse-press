@@ -50,6 +50,7 @@ main {
 }
 
 .card {
+    margin: 20px;
     min-height: 560px;
     border-radius: 20px;
 }
@@ -67,5 +68,9 @@ main {
 
     #site-map {
         margin: 0px 10px 10px;
+    }
+    .grid-x {
+        flex-direction: column !important;
+
     }
 }
