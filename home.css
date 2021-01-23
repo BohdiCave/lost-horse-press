@@ -1,9 +1,13 @@
 body {
-    background-color: whitesmoke;
+    background-color: #e6e6e6;
 }
 
 .title-bar .menu-icon {
     margin-right: 10px;
+}
+
+#site-map {
+    margin-right: 30px;
 }
 
 .dropdown.menu a {
@@ -41,3 +45,27 @@ body {
     padding: 0px;
 }
 
+main {
+    margin: 30px;
+}
+
+.card {
+    min-height: 560px;
+    border-radius: 20px;
+}
+
+.card-section {
+    text-align: center;
+}
+
+.cover {
+    max-width: 200px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 400px) {
+
+    #site-map {
+        margin: 0px 10px 10px;
+    }
+}
