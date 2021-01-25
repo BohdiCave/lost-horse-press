@@ -13,11 +13,11 @@ body {
 .hide { visibility: hidden; }
 
 /* Off-canvas site map stylings */
-div.off-canvas-btn { height: 80px; }
 .off-canvas { background-color: wheat; }
 .off-canvas a { 
     color: rgb(141, 21, 21); 
-    padding: 0px 5px; }
+    padding: 0px 5px; 
+}
 .off-canvas ul { 
     list-style-type: none;
     background-color: none; 
@@ -46,32 +46,11 @@ div.off-canvas-btn { height: 80px; }
     font-size: 22px;}
 .off-canvas a.title { font-size: 20px; }
 
-
-button#site-map {
-    background-color: transparent;
-    margin: 15px;
-    padding: 5px 12px 5px;
-    line-height: 24px;
-    border-radius: 50%;
-    font-size: 16px;
-    color: black;
-    animation-duration: .75s;
-    animation-name: zoomin2;
-}
-button#site-map:hover {
-    color:  rgb(141, 21, 21);
-    box-shadow: 1px 1px 20px 1px #000; 
-    font-size: 20px;
-    padding: 8px 12px 8px;
-}
-@keyframes zoomin2 {
-    from { display: contents; font-size: 2px; }
-    to { display: contents; font-size: 16px; }
-}
-
 /* Main content */
 .container {
     width: 100%;
+    height: 650px;
+    margin-top: -120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,41 +58,46 @@ button#site-map:hover {
 }
 .landing-menu {
     background-color: rgba(0, 0, 0, 0.7);
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 40px 2px #333;
-}
-.landing-menu div.content {
-    width: 100%;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    border-radius: 50%;
+    box-shadow: 1px 1px 20px 1px black;
 }
-.landing-menu a {
-    text-decoration: none;
-    animation-duration: .75s;
-    animation-name: zoomin;
-    text-shadow: 1px 1px 16px #aaa; 
-    color:  rgb(141, 21, 21);
-    font-weight: bold;
-} 
-@keyframes zoomin {
-    from { display: contents; font-size: 2px; }
-    to { display: contents; font-size: 20px; }
+.left {
+    width: 40%; height: 240px;
+}
+.middle {
+    margin-left: -20px;
+    text-align: center;
+    width: 20%;
+}
+.empty {
+    height: 300px;
+}
+.right {
+    margin-left: -50px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.left {
-    text-align: center;
-    width: 25%;
+/* Logo */ 
+div.left a {
+    height: 240px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 img#logo {
-    margin-left: 70px;
+    width: 220px;
+    margin-left: 100px;
     border-radius: 50%;
     box-shadow: 1px 1px 60px 2px darkslategray;  
     animation-duration: 1.5s;
@@ -121,44 +105,143 @@ img#logo {
 }
 img#logo:hover {
     box-shadow: 1px 1px 20px 1px black;
+    width: 230px;
 }
 @keyframes floatin {
     from { margin-left: -800px; }
-    to { margin-left: 70px; }
+    to { margin-left: 100px; }
 }
-.right {
-    width: 25%;
-    height: 250px;
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+
+/* Menu buttons */
+div.landing-menu div.middle a, 
+div.landing-menu div.right a {
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 16px #aaa; 
+    text-decoration: none;
+    animation-duration: .75s;
+    animation-name: zoomin;
+}
+@keyframes zoomin {
+    from { font-size: 2px; }
+    to { font-size: 20px; }
+}
+ 
+div.landing-menu a:hover {
+    color:  rgb(141, 21, 21);
 }
 div.button {
-    background-color: transparent;
-    margin: 5px;
-    padding: 0;
+    background: transparent;
     border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 0px;
 }
+div.button:hover { background: transparent; }
+div.middle div.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+div.middle div.button:hover { padding: 0px; }
+div.right div.button { margin: 15px 0px; }
+
 button {
-    background: rgba(245, 222, 179, 0.2);
+    background: rgba(245, 222, 179, 0.4);
     border-width: 0px;
     border-color: black;
     border-radius: 50%;
     box-shadow: 1px 1px 60px 2px #333;
-    padding: 15px;
+    padding: 15px 5px;
+    animation-duration: .75s;
+    animation-name: zoomBtn;
+}   
+@keyframes zoomBtn {
+    from { visibility: visible; height: 5px; width: 5px; }
+    to { visibility: visible; }
 }
 button:hover { box-shadow: 1px 1px 20px 1px #000; }
-button a:hover { font-size: 25px; }
 
+button#news { width: 90px; height: 90px; }
+button#about { width: 100px; height: 100px; }
+button#cat { width: 150px; height: 150px; margin: 5px; }
+button#sub { width: 160px; height: 160px; margin: 5px; }
+
+button#news:hover { width: 100px; height: 100px; }
+button#about:hover { width: 110px; height: 110px; }
+button#cat:hover { width: 160px; height: 160px; margin: 0px; }
+button#sub:hover { width: 170px; height: 170px; margin: 0px; }
+
+/* Site Map button */
+div.off-canvas-btn {
+    height: 100px; 
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+div.site-map-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100px; height: 100px;
+}
+button#site-map {
+    height: 80px; width: 80px;
+    margin: 0;
+    padding: 5px;
+    font-size: 18px;
+    color: black;
+    border-radius: 50%;
+    line-height: 24px;
+    background-color: transparent;
+    animation-duration: .75s;
+    animation-name: zoomin2;
+}
+button#site-map:hover {
+    color:  rgb(141, 21, 21);
+    box-shadow: 1px 1px 20px 1px #000; 
+    height: 90px; width: 90px;
+}
+@keyframes zoomin2 {
+    from { display: contents; font-size: 2px; }
+    to { display: contents; font-size: 18px; }
+}
 
 /* Media queries */
 @media screen and (max-width: 400px) {
-    .landing-menu {flex-direction: column; padding: 0px 20px; width: 70%}
-    .landing-menu a { font-size: 30px; }
-    .top { margin: 0px 0px 40px;}
-    .left { width: 100%; height: 50px; margin: 40px 0px; text-align: center;}
-    .middle {width: 100%; }
-    .right { width: 100%; height: 50px; margin: 40px 0px; text-align: center;}
-    .bottom { margin-top: 30px;}
+    div.off-canvas-btn { margin: 0px; margin-bottom: 10px; }
+    button#site-map { height: 70px; width: 70px; }
+    .container { margin-top: -40px; }
+    .landing-menu {
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 15px; 
+        padding: 0; 
+        width: 80%;
+    }
+    div.left a { height: auto; margin: 20px 0px; flex-direction: column; }
+    .left { width: 100%; height: auto; }
+    .empty { display: none; }
+    .right { width: 100%; height: 150px; margin-left: 0px; }
+    .middle {
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+    }
+    img#logo { margin-left: 0px; }
+    @keyframes floatin { from { margin-left: -600px; } to { margin-left: 0px; } }
+    div.middle div.button button a, 
+    div.right div.button button a { font-size: 20px; }
+    button { border-radius: 15px; padding: 5px; }
+    button#news, button#about, button#cat, button#sub { width: 160px; height: 40px; }
 }
