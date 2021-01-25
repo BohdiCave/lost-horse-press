@@ -1,14 +1,57 @@
 body {
-    background-color: #e6e6e6;
+    background-color: wheat;
 }
 
 .title-bar .menu-icon {
     margin-right: 10px;
 }
 
+.top-bar, .dropdown.menu, ul.menu {
+    background-color: wheat;
+}
+
+.top-bar {
+    border-bottom: 1px dotted rgba(141, 21, 21, 0.6); 
+    padding: 10px;
+}
 #site-map {
     margin-right: 30px;
 }
+
+/* Off-canvas site map stylings */
+div.off-canvas-btn { height: 80px; }
+.off-canvas { background-color: rgb(245, 222, 179); }
+.off-canvas a { 
+    color: rgb(141, 21, 21); 
+    padding: 0px 5px; }
+.off-canvas ul { 
+    list-style-type: none;
+    background-color: none; 
+    box-shadow: none; 
+    width: 90%; 
+    margin-left: 15px; 
+    border-radius: 0px;
+    font-size: 35px;
+}
+.off-canvas ul li ul.menu.vertical { 
+    background-color: rgba(100, 100, 100, 0.5); 
+    padding: 5px 0px;
+    width: 80%; 
+    border-radius: 10px; 
+    box-shadow: 1px 1px 8px black;
+}
+.off-canvas ul li ul.menu.vertical li a { 
+    padding: 5px 10px; 
+    line-height: 22px;
+    text-shadow: 1px 1px 48px rgb(188, 186, 137); 
+    font-size: 18px;
+}
+.off-canvas ul li ul.menu.vertical li a:hover { 
+    border-radius: 10px; 
+    box-shadow: 1px 1px 8px black; 
+    font-size: 22px;}
+
+.off-canvas ul li a.head-title { font-size: 20px; }
 
 .dropdown.menu a {
     color: black;
@@ -46,22 +89,54 @@ body {
 }
 
 main {
-    margin: 30px;
+    margin: 0px;
+}
+
+.cell {
+    padding: 20px;
 }
 
 .card {
-    margin: 20px;
     min-height: 560px;
-    border-radius: 20px;
+    border: 0;
+    background-color: wheat;
 }
 
-.card-section {
+div.card-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.card-section.title {
+    height: 120px;
+    padding-bottom: 0;
+}
+
+h4 { 
+    width: 80%;
+    font-size: 20px; 
+    font-style: italic;
+    text-align: center;     
+}
+
+div.card-section.desc {
+    height: 100px;
+    padding-top: 0px;
+}
+
+div.card-section.book-cover{
+    height: 350px;
+    padding: 0;
+}
+
+p {
     text-align: center;
 }
 
 .cover {
     max-width: 200px;
-    border-radius: 20px;
 }
 
 @media screen and (max-width: 400px) {
