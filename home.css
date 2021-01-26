@@ -1,22 +1,27 @@
-body {
-    background-color: wheat;
+/* General */
+body { background-color: wheat; }
+p { text-align: center; }
+h4 { 
+    width: 80%;
+    font-size: 20px; 
+    font-style: italic;
+    text-align: center;     
 }
 
-.title-bar .menu-icon {
-    margin-right: 10px;
-}
-
-.top-bar, .dropdown.menu, ul.menu {
-    background-color: wheat;
-}
-
-.top-bar {
-    border-bottom: 1px dotted rgba(141, 21, 21, 0.6); 
-    padding: 10px;
-}
-#site-map {
-    margin-right: 30px;
-}
+/* Navigation */
+.title-bar .menu-icon { margin-right: 10px; }
+.top-bar, .dropdown.menu, ul.menu { background-color: wheat; }
+.top-bar { border-bottom: 1px dotted rgba(141, 21, 21, 0.6); padding: 10px; }
+.menu input { border-radius: 10px; }
+.button { background-color: black; border-radius: 10px; }
+.button:hover { background-color: rgb(141, 21, 21); }
+#site-map { margin-right: 30px; }
+#lhp-brand { margin: 0px; padding: 0px; }
+/* Dropdown */
+.dropdown.menu a { color: black; }
+.dropdown.menu a:hover, 
+.is-dropdown-submenu-parent.is-active a#drop-parent { color: rgb(141, 21, 21); }
+.dropdown.menu li.is-dropdown-submenu-parent a::after { border-top-color: rgb(141, 21, 21); }
 
 /* Off-canvas site map stylings */
 div.off-canvas-btn { height: 80px; }
@@ -50,95 +55,35 @@ div.off-canvas-btn { height: 80px; }
     border-radius: 10px; 
     box-shadow: 1px 1px 8px black; 
     font-size: 22px;}
-
 .off-canvas ul li a.head-title { font-size: 20px; }
 
-.dropdown.menu a {
-    color: black;
-}
-
-/* .top-bar-left a:hover {
-    color: rgb(23, 121, 186);
-} */
-
-.dropdown.menu a:hover, 
-.is-dropdown-submenu-parent.is-active a#drop-parent {
-    color: rgb(141, 21, 21);
-}
-
-.dropdown.menu li.is-dropdown-submenu-parent a::after {
-    border-top-color: rgb(141, 21, 21);
-}
-
-.menu input {
-    border-radius: 10px;
-}
-
-.button {
-    background-color: black;
-    border-radius: 10px;
-}
-
-.button:hover {
-    background-color: rgb(141, 21, 21);
-}
-
-#lhp {
-    margin: 0px;
-    padding: 0px;
-}
-
-main {
-    margin: 0px;
-}
-
-.cell {
-    padding: 20px;
-}
-
+/* Main content */
+main { margin: 0px; }
+.cell { padding: 20px; }
 .card {
     min-height: 560px;
     border: 0;
     background-color: wheat;
 }
-
 div.card-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
 div.card-section.title {
     height: 120px;
     padding-bottom: 0;
 }
-
-h4 { 
-    width: 80%;
-    font-size: 20px; 
-    font-style: italic;
-    text-align: center;     
-}
-
 div.card-section.desc {
     height: 100px;
     padding-top: 0px;
 }
-
 div.card-section.book-cover{
     height: 350px;
     padding: 0;
 }
-
-p {
-    text-align: center;
-}
-
-.cover {
-    max-width: 200px;
-}
-
+.cover { max-width: 200px; }
 footer {
     display: flex;
     flex-direction: row;
@@ -149,12 +94,6 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
-
-    #site-map {
-        margin: 0px 10px 10px;
-    }
-    .grid-x {
-        flex-direction: column !important;
-
-    }
+    #site-map { margin: 0px 10px 10px; }
+    .grid-x { flex-direction: column !important; }
 }
