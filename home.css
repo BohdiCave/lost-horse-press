@@ -63,11 +63,11 @@ div.off-canvas-btn { height: 80px; }
 
 .dropdown.menu a:hover, 
 .is-dropdown-submenu-parent.is-active a#drop-parent {
-    color: firebrick;
+    color: rgb(141, 21, 21);
 }
 
 .dropdown.menu li.is-dropdown-submenu-parent a::after {
-    border-top-color: firebrick;
+    border-top-color: rgb(141, 21, 21);
 }
 
 .menu input {
@@ -80,7 +80,7 @@ div.off-canvas-btn { height: 80px; }
 }
 
 .button:hover {
-    background-color: firebrick;
+    background-color: rgb(141, 21, 21);
 }
 
 #lhp {
@@ -137,6 +137,15 @@ p {
 
 .cover {
     max-width: 200px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px; 
+    border-top: 1px dashed rgb(141, 21, 21);
 }
 
 @media screen and (max-width: 400px) {

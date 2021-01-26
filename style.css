@@ -127,7 +127,8 @@ div.landing-menu div.right a {
     to { font-size: 20px; }
 }
  
-div.landing-menu a:hover {
+div.landing-menu div.middle a:hover, 
+div.landing-menu div.right a:hover {
     color:  rgb(141, 21, 21);
 }
 div.button {
