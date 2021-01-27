@@ -1,31 +1,32 @@
 /* General */
-body { background-color: wheat; }
+body { background-color: rgb(253, 251, 245); }
 p { text-align: center; }
 h4 { 
     width: 80%;
     font-size: 20px; 
     font-style: italic;
-    text-align: center;     
+    text-align: center;
 }
 
 /* Navigation */
 .title-bar .menu-icon { margin-right: 10px; }
-.top-bar, .dropdown.menu, ul.menu { background-color: wheat; }
-.top-bar { border-bottom: 1px dotted rgba(141, 21, 21, 0.6); padding: 10px; }
-.menu input { border-radius: 10px; }
-.button { background-color: black; border-radius: 10px; }
+.top-bar, .dropdown.menu, ul.menu { background-color:rgb(243, 233, 216); }
+.top-bar img { width: 100px; }
+/* .top-bar { border-bottom: 1px dotted rgba(141, 21, 21, 0.6); padding: 10px; } */
+.button { background-color: black; }
 .button:hover { background-color: rgb(141, 21, 21); }
-#site-map { margin-right: 30px; }
+button#site-map { margin: 20px 30px; }
 #lhp-brand { margin: 0px; padding: 0px; }
 /* Dropdown */
-.dropdown.menu a { color: black; }
+.dropdown.menu li a { color: black; font-size: 18px; margin-top: 20px; }
 .dropdown.menu a:hover, 
 .is-dropdown-submenu-parent.is-active a#drop-parent { color: rgb(141, 21, 21); }
 .dropdown.menu li.is-dropdown-submenu-parent a::after { border-top-color: rgb(141, 21, 21); }
-
+.dropdown.menu > li.opens-right > .is-dropdown-submenu { top: 80%; min-width: 250px; }
+.dropdown.menu > li.opens-right > .is-dropdown-submenu > li.is-dropdown-submenu-item > a { font-size: 16px; margin-top: 5px; line-height: 1.6;  }
 /* Off-canvas site map stylings */
 div.off-canvas-btn { height: 80px; }
-.off-canvas { background-color: rgb(245, 222, 179); }
+.off-canvas { background-color: rgb(243, 233, 216); }
 .off-canvas a { 
     color: rgb(141, 21, 21); 
     padding: 0px 5px; }
@@ -39,7 +40,7 @@ div.off-canvas-btn { height: 80px; }
     font-size: 35px;
 }
 .off-canvas ul li ul.menu.vertical { 
-    background-color: rgba(100, 100, 100, 0.5); 
+    background-color: rgba(100, 100, 100, 0.2); 
     padding: 5px 0px;
     width: 80%; 
     border-radius: 10px; 
@@ -48,7 +49,7 @@ div.off-canvas-btn { height: 80px; }
 .off-canvas ul li ul.menu.vertical li a { 
     padding: 5px 10px; 
     line-height: 22px;
-    text-shadow: 1px 1px 48px rgb(188, 186, 137); 
+    text-shadow: 1px 1px 48px rgb(243, 233, 216); 
     font-size: 18px;
 }
 .off-canvas ul li ul.menu.vertical li a:hover { 
@@ -63,7 +64,7 @@ main { margin: 0px; }
 .card {
     min-height: 560px;
     border: 0;
-    background-color: wheat;
+    background-color: rgb(253, 251, 245);
 }
 div.card-section {
     display: flex;
@@ -89,8 +90,9 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 15px; 
-    border-top: 1px dashed rgb(141, 21, 21);
+    padding: 30px; 
+    /* border-top: 1px dotted rgb(141, 21, 21); */
+    background-color: rgb(243, 233, 216);
 }
 
 @media screen and (max-width: 400px) {

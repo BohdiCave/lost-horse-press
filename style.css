@@ -28,7 +28,7 @@ body {
     font-size: 35px;
 }
 .off-canvas ul li ul.menu.vertical { 
-    background-color: rgba(100, 100, 100, 0.5); 
+    background-color: rgba(100, 100, 100, 0.2); 
     padding: 5px 0px;
     width: 80%; 
     border-radius: 10px; 
@@ -99,7 +99,7 @@ img#logo {
     width: 220px;
     margin-left: 100px;
     border-radius: 50%;
-    box-shadow: 1px 1px 60px 2px rgb(47, 79, 79);  
+    box-shadow: 1px 1px 20px 1px #333333;  
     animation-duration: 1.5s;
     animation-name: float-in;
 }
@@ -156,7 +156,7 @@ button {
     border-width: 0px;
     border-color: black;
     border-radius: 50%;
-    box-shadow: 1px 1px 60px 2px #333333;
+    box-shadow: 1px 1px 20px 1px #333333;
     padding: 15px 5px;
     animation-duration: .75s;
     animation-name: zoomBtn;
