@@ -15,6 +15,14 @@ module.exports = (sequelize, DataTypes) {
     article_parent: {type: DataTypes.BIGINT.UNSIGNED, allowNull: false, defaultValue: 0},
     article_type: {type: DataTypes.STRING, allowNull: false, defaultValue: "post"},
     article_mime_type: {type: DataTypes.String, allowNull: false, defaultValue: ""},
-    comment_count: {type: DataTypes.BIGINT, allowNull: false, defaultValue: 0}  });
+    comment_count: {type: DataTypes.BIGINT, allowNull: false, defaultValue: 0}  
+  });
+
+  Article.associate = models => {
+    Article.belongsTo(models.User, {
+        as: "article_author"
+    });
+  }
+
   return Article;
 }

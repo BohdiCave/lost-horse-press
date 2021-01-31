@@ -10,5 +10,11 @@ module.exports = (sequelize, DataTypes) {
     user_status: {type: DataTypes.INTEGER, allowNull: false, defaultValue: 0},
     display_name: {type: DataTypes.STRING, allowNull: false, defaultValue: ""}
   });
+
+  User.associate = models => { 
+    User.hasMany(models.Post, { foreignKey: {allowNull: false}, onDelete: "cascade" });
+    User.hasMany(models.Article, { foreignKey: {allowNull: false}, onDelete: "restrict" }); 
+  };
+
   return User;
 }

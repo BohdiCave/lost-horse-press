@@ -1,6 +1,5 @@
 module.exports = (sequelize, DataTypes) { 
     const Post = sequelize.define('Post', {
-        post_author: {type: DataTypes.BIGINT.UNSIGNED, allowNull: false, defaultValue: 0},
         post_date: {type: DataTypes.DATETIME, allowNull: false, defaultValue: Sequelize.NOW},
         post_date_gmt: {type: DataTypes.DATETIME, allowNull: false, defaultValue: Sequelize.NOW},
         post_content: {type: DataTypes.TEXT, allowNull: false},
@@ -21,5 +20,12 @@ module.exports = (sequelize, DataTypes) {
         post_mime_type: {type: DataTypes.String, allowNull: false, defaultValue: ""},
         comment_count: {type: DataTypes.BIGINT, allowNull: false, defaultValue: 0}
     });
+
+    Post.associate = models => {
+        Post.belongsTo(models.User, {
+            as: "post_author"
+        })
+    };
+
     return Post;
 }
