@@ -7,7 +7,7 @@ export default {
     return axios.get("/api/catalog");
   },
   // Create and save a new book to the catalog
-    saveBook: (bookData) => {
+  saveBook: (bookData) => {
     return axios.post("/api/catalog", bookData);
   },
   // Get a book by id
@@ -25,22 +25,22 @@ export default {
   // POST-RELATED ROUTES
   // Get all posts
   getPosts: () => {
-    return axios.get("/api/posts");
+    return axios.get("/api/news");
   },
   // Get a post by id
   getPost: (id) => {
-    return axios.get("/api/posts/" + id);
+    return axios.get("/api/news/" + id);
   }, 
   // Update a post by id
   updatePost: (id) => {
-    return axios.put("/api/posts/" + id);
+    return axios.put("/api/news/" + id);
   },
   // Delete a post by id
   deletePost: (id) => {
-    return axios.delete("/api/posts/" + id);
+    return axios.delete("/api/news/" + id);
   },
   // Create and save a new post
   savePost: (postData) => {
-    return axios.post("/api/posts", postData);
+    return axios.post("/api/news", postData);
   }
 };

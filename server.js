@@ -1,5 +1,5 @@
 import express from 'express';
-import routes from './routes';
+import router from './routes';
 
 const db = require('./models');
 const app = express();
@@ -13,11 +13,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-app.use(routes);
+app.use(router);
 
 // Start the API server
 db.sequelize.sync({force: false}).then(() => {
   app.listen(PORT, function() {
-    console.log(`🌎 ==> Server listening on PORT ${PORT}!`);
+    console.log(`🌎 ==> API server listening on PORT ${PORT}!`);
   });
 });
