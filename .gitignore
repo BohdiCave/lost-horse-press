@@ -45,8 +45,8 @@ node_modules/
 jspm_packages/
 
 # Custom directories with auxiliary files
-help_files/
-server_files/
+0help_files/
+0server_files/
 
 # TypeScript v1 declaration files
 typings/

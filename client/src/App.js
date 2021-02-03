@@ -4,12 +4,14 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
+import './App.css';
 
 function App() {
   return (
     <Router>
       <div>
         <Navbar />
+        <OffCanvasWrapper />
         <Switch>
           <Route exact path={["/books", "/catalog"]}>
             <Catalog />

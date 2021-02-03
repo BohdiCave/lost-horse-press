@@ -2,6 +2,7 @@ import axios from "axios";
 
 export default {
   // BOOK-RELATED ROUTES
+  //
   // Get all the books in the catalog
   getBooks: () => {
     return axios.get("/api/catalog");
@@ -22,7 +23,9 @@ export default {
   deleteBook: (id) => {
     return axios.delete("/api/catalog/" + id);
   },
+  //
   // POST-RELATED ROUTES
+  //
   // Get all posts
   getPosts: () => {
     return axios.get("/api/news");
@@ -42,5 +45,16 @@ export default {
   // Create and save a new post
   savePost: (postData) => {
     return axios.post("/api/news", postData);
+  },
+  //
+  // ARTICLE_RELATED ROUTES
+  //
+  // Get an article by id
+  getArticle: (id) => {
+    return axios.get("/api/about/" + id);
+  },
+  // Get all articles
+  getArticles: () => {
+    return axios.get("/api/about/");
   }
 };

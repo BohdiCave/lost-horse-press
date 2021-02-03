@@ -1,14 +1,13 @@
 import React from 'react';
 
 export default function Footer() {
-  return (
-    <footer>
-      <p id="copyright">
-        2020 &copy; 
-        <a class="copyright" href="https://github.com/BohdiCave" target="new">
-          Bohdan Pechenyak
-        </a>
-      </p>
-    </footer>
-  );
+  
+    return(
+        <footer>
+            <div className="copyright">
+                All rights reserved. &copy; Made with love by <a href="https://github.com/BohdiCave"> BohdiCave </a> 
+                for LOST HORSE PRESS.
+            </div> 
+        </footer>
+    );
 }

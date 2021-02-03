@@ -4,13 +4,16 @@ module.exports = (sequelize, DataTypes) {
     title: { type: DataTypes.STRING, allowNull: false },
     blurb: { type: DataTypes.TEXT, allowNull: false },
     blurb_author: { type: DataTypes.STRING, allowNull: false },
+    author: {type: DataTypes.STRING, allowNull: false},
     isbn: {type: DataTypes.STRING, allowNull: false},
     isbn_hc: {type: DataTypes.STRING, defaultValue: null},
     genre: {type: DataTypes.STRING, allowNull: false},
     price_us: {type: DataTypes.STRING, allowNull: false},
     price_can: {type: DataTypes.STRING, defaultValue: null},
     price_us_hc: {type: DataTypes.STRING, defaultValue: null},
+    editor: {type: DataTypes.STRING, defaultValue: null},
     rewrite: {type: DataTypes.STRING, allowNull: false},
+    bio: {type: DataTypes.TEXT, allowNull: false},
     pages: {type: DataTypes.INTEGER, allowNull: false},
     height: {type: DataTypes.STRING, allowNull: false},
     width: {type: DataTypes.STRING, allowNull: false},
@@ -19,11 +22,11 @@ module.exports = (sequelize, DataTypes) {
     praise: {type: DataTypes.TEXT}
   });
 
-  Book.associate = models => {
-    Book.belongsToMany(models.Author, {
-      through: "AuthorBooks"
-    });
-  };
+  // Book.associate = models => {
+  //   Book.belongsToMany(models.Author, {
+  //     through: "AuthorBooks"
+  //   });
+  // };
 
   return Book;
 }
