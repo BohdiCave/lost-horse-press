@@ -1,9 +1,12 @@
 import React, {useCallback} from 'react';
+import {useLocation} from 'react-router-dom';
 import $ from 'jquery';
 import Foundation from 'foundation-sites';
 import Card from './Card';
 
-export default function MainGrid() {
+export default function MainGrid({books}) {
+    const location = useLocation();
+    const address = location.pathname;
 
     const foundationTopNav = useCallback(node => {
         if ( node !== null ) {
@@ -13,6 +16,27 @@ export default function MainGrid() {
   
     return(
         <main>
+            {address==="/catalog" ? 
+            (
+            <div className="cat-results">
+                <table>
+                    <tbody>
+                    {books.map(book => {
+                        return(
+                        <tr>
+                            <th>
+                                {book.author}
+                            </th>
+                            <td>
+                                {book.bio}
+                            </td>
+                        </tr>);
+                    })}
+                    </tbody>
+                </table>
+            </div>
+            )
+            : (
             <div className="grid-x small-up-1 medium-up-4" id="responsive">
                 <div className="cell">
                     <Card name="one"/>
@@ -26,7 +50,7 @@ export default function MainGrid() {
                 <div className="cell">
                     <Card name="four"/>
                 </div>
-            </div>
+            </div>)}
         </main>
     );
 }

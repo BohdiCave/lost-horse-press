@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) { 
+module.exports = (sequelize, DataTypes) => { 
   
   const Book = sequelize.define('Book', {
     title: { type: DataTypes.STRING, allowNull: false },
@@ -18,8 +18,10 @@ module.exports = (sequelize, DataTypes) {
     height: {type: DataTypes.STRING, allowNull: false},
     width: {type: DataTypes.STRING, allowNull: false},
     stage: {type: DataTypes.INTEGER, allowNull: false, defaultValue: 2},
-    excerpt: {type: DataTypes.STRING},
-    praise: {type: DataTypes.TEXT}
+    // excerpt: {type: DataTypes.STRING},
+    // praise: {type: DataTypes.TEXT}
+  }, {
+    timestamps: false
   });
 
   // Book.associate = models => {

@@ -21,7 +21,7 @@ export default function OffCanvasMenu() {
                 </li>
                 <li><a href="#" className="head-title">BOOK CATALOG</a>
                     <ul className="menu vertical">
-                        <li><a href="/catalog">Listings</a></li>
+                        <li><a href="/api/catalog">Listings</a></li>
                         <li><a href="/series">Series</a></li>
                         <li><a href="/order">Order</a></li>
                     </ul>

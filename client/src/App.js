@@ -1,31 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
 import Books from "./pages/Books";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Navbar from "./components/Navbar";
-import './App.css';
+// import Navbar from "./components/Navbar";
+// import './App.css';
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <div>
-        <Navbar />
-        <OffCanvasWrapper />
         <Switch>
           <Route exact path={["/books", "/catalog"]}>
-            <Catalog />
+            <Books />
           </Route>
-          <Route exact path="/books/:id">
-            <Detail />
+          {/* <Route exact path="/books/:id"> */}
+            {/* <Detail /> */}
+          {/* </Route> */}
+          <Route exact path="/">
+            <Home />
           </Route>
           <Route>
             <NoMatch />
           </Route>
         </Switch>
-      </div>
     </Router>
   );
 }
-
-export default App;
