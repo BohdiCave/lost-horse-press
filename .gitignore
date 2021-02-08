@@ -29,7 +29,7 @@ coverage
 .grunt
 
 # Material icons VS files
-.vscode/
+.vscode
 
 # Bower dependency directory (https://bower.io/)
 bower_components
