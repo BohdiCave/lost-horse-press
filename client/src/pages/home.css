@@ -8,11 +8,23 @@ h4 {
     font-style: italic;
     text-align: center;
 }
-
+h2 {
+    text-align: center;
+}
 #wrapper {
     background-color: rgb(243, 233, 216);
 }
 
+th.cover {
+    width: 220px;
+} 
+td.bio {
+    width:600px;
+    padding: 0px 50px 0px 20px;
+}
+#preformatted {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 /* Navigation */
 .title-bar .menu-icon { margin-right: 10px; }
 .top-bar, .dropdown.menu, ul.menu { background-color: rgb(243, 233, 216); }
@@ -37,7 +49,7 @@ div.off-canvas-btn { height: 80px; }
     padding: 0px 5px; }
 .off-canvas ul { 
     list-style-type: none;
-    background-color: none; 
+    background-color: transparent; 
     box-shadow: none; 
     width: 90%; 
     margin-left: 15px; 
@@ -89,7 +101,7 @@ div.card-section.book-cover{
     height: 350px;
     padding: 0;
 }
-.cover { max-width: 200px; }
+img.cover { width: 200px; }
 footer {
     display: flex;
     flex-direction: row;

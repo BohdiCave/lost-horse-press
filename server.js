@@ -1,5 +1,6 @@
 const express = require('express');
 const router = require('./routes');
+const passport = require('passport');
 
 const db = require('./models');
 const app = express();
@@ -14,6 +15,8 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(router);
+app.use(passport.initialize());
+require('./config/passport')(passport);
 
 // Start the API server
 db.sequelize.sync({force: false}).then(() => {

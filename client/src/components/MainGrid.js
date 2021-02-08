@@ -19,16 +19,19 @@ export default function MainGrid({books}) {
             {address==="/catalog" ? 
             (
             <div className="cat-results">
+                <h2>Catalog Listings</h2>
                 <table>
                     <tbody>
                     {books.map(book => {
                         return(
-                        <tr>
-                            <th>
-                                {book.author}
+                        <tr key={book.id}>
+                            <th className="cover">
+                                <img className="cover" src={`/assets/images/covers/${book.id}.jpg`}/>
+                                <p>{book.author && (`by ${book.author}`)}</p>
                             </th>
-                            <td>
-                                {book.bio}
+                            <td className="bio">
+                                <h5>{book.bio && "About the author:"}</h5>
+                                <div id="preformatted">{book.bio}</div>
                             </td>
                         </tr>);
                     })}
@@ -39,16 +42,16 @@ export default function MainGrid({books}) {
             : (
             <div className="grid-x small-up-1 medium-up-4" id="responsive">
                 <div className="cell">
-                    <Card name="one"/>
+                    <Card key="one" name="one"/>
                 </div>
                 <div className="cell">
-                    <Card name="two"/>
+                    <Card key="two" name="two"/>
                 </div>
                 <div className="cell">
-                    <Card name="three"/>
+                    <Card key="three" name="three"/>
                 </div>
                 <div className="cell">
-                    <Card name="four"/>
+                    <Card key="four" name="four"/>
                 </div>
             </div>)}
         </main>
