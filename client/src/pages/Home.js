@@ -11,11 +11,16 @@ export default function Home() {
     const address = location.pathname;
     return(
         <>
-        {address==="/api/books" || address==="/api/catalog" ? 
-        (<><Navbar/><MainGrid/></>)
+        {
+        address==="/api/books" || address==="/api/catalog" 
+        ? (<>
+        <Navbar/>
+        <MainGrid/>
+        </>)
         : (<>    
         <Navbar/>
-        <OffCanvasWrapper /></>)
+        <OffCanvasWrapper />
+        </>)
         }
         
         </>

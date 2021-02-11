@@ -28,23 +28,45 @@ export default {
   //
   // Get all posts
   getPosts: () => {
-    return axios.get("/api/news");
-  },
-  // Get a post by id
-  getPost: (id) => {
-    return axios.get("/api/news/" + id);
-  }, 
-  // Update a post by id
-  updatePost: (id) => {
-    return axios.put("/api/news/" + id);
-  },
-  // Delete a post by id
-  deletePost: (id) => {
-    return axios.delete("/api/news/" + id);
+    return axios.get("/api/posts");
   },
   // Create and save a new post
   savePost: (postData) => {
-    return axios.post("/api/news", postData);
+    return axios.post("/api/posts", postData);
+  },
+  // Get a post by id
+  getPost: (id) => {
+    return axios.get("/api/posts/" + id);
+  }, 
+  // Update a post by id
+  updatePost: (id) => {
+    return axios.put("/api/posts/" + id);
+  },
+  // Delete a post by id
+  deletePost: (id) => {
+    return axios.delete("/api/posts/" + id);
+  },
+  //
+  // COVER_RELATED ROUTES
+  //
+  // Get all covers
+  getCovers: () => {
+    return axios.get("/api/covers");
+  },
+  // Add a cover
+  addCover: (coverData) => {
+    return axios.post("/api/covers" + coverData);
+  },
+  // Get a cover by id
+  getCover: (id) => {
+    return axios.get("/api/covers/" + id);
+  },
+  updateCover: (id) => {
+    return axios.update("/api/covers/" + id);
+  },
+  // Remove a cover
+  deleteCover: (id) => {
+    return axios.delete("/api/covers/" + id);
   },
   //
   // ARTICLE_RELATED ROUTES
@@ -55,6 +77,6 @@ export default {
   },
   // Get all articles
   getArticles: () => {
-    return axios.get("/api/about/");
+    return axios.get("/api/about");
   }
 };

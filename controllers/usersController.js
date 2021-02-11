@@ -1,11 +1,12 @@
 const db = require("../models");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const keys = require("../config/keys");
 
 // Load input validation
-const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = require("../../validation/login");
-
+const validateRegisterInput = require("../validation/register");
+const validateLoginInput = require("../validation/login");
+let newUser = {};
 // Defining methods for the usersController
 module.exports = {
 
@@ -20,24 +21,28 @@ module.exports = {
           .then(user => {
             if (user) { return res.status(400).json({ user_login: "Login already exists" }); } 
             else { 
-                const newUser = {
+                newUser = {
                     user_login: req.body.user_login,
-                    user_pass: req.body.user_pass,
                     user_email: req.body.user_email,
-                    user_registered: Date.now()
+                    user_pass: req.body.user_pass,
+                    user_registered: req.body.user_registered
                 }
+                console.log(newUser);
                 // Hash password before saving in database
-                bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.genSalt(10, (err, salt=bcrypt.genSaltSync(10)) => {
                     bcrypt.hash(newUser.user_pass, salt, (err, hash) => {
                         if (err) throw err;
+                        hash = bcrypt.hashSync(newUser.user_pass, salt);
                         newUser.user_pass = hash;
+                        db.User
+                          .create(newUser)
+                          .then(user=> res.json(user))
+                          .catch(err => res.status(422).json(err));
                     });
                 });
+                console.log(newUser);
             }
-          })
-          .create(newUser)
-          .then(user => res.json(user))
-          .catch(err => res.status(422).json(err)); 
+          }).catch(err => res.json(err));
     },
     // @route POST api/users/login -- @desc Login user and return JWT token -- @access Public
     login: (req, res) => {
@@ -57,14 +62,14 @@ module.exports = {
             // Check password
             bcrypt.compare(user_pass, user.user_pass)
                 .then(isMatch => {
-                if (isMatch) {
+                  if (isMatch) {
                     // Create JWT Payload
                     const payload = {
                         id: user.id,
                         name: user.user_login
                     };
                     // Sign token
-                    jwt.sign( payload, keys.secretOrKey, { expiresIn: 31556926}, /* 1 year in seconds */
+                    jwt.sign( payload, keys.secretOrKey, { expiresIn: 31556926 }, /* 1 year in seconds */
                         (err, token) => { 
                             res.json({
                                 success: true,

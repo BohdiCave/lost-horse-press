@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import Foundation from 'foundation-sites';
 
@@ -15,28 +16,28 @@ export default function OffCanvasMenu() {
             <ul>
                 <li><a href="#" className="head-title">NEWS</a>
                     <ul className="menu vertical">
-                        <li><a href="/news">Latest News</a></li>
-                        <li><a href="/featured">New Releases</a></li>
+                        <li><Link to="/news">Latest News</Link></li>
+                        <li><Link to="/featured">New Releases</Link></li>
                     </ul>
                 </li>
                 <li><a href="#" className="head-title">BOOK CATALOG</a>
                     <ul className="menu vertical">
-                        <li><a href="/api/catalog">Listings</a></li>
-                        <li><a href="/series">Series</a></li>
-                        <li><a href="/order">Order</a></li>
+                        <li><Link to="/api/catalog">Listings</Link></li>
+                        <li><Link to="/series">Series</Link></li>
+                        <li><Link to="/order">Order</Link></li>
                     </ul>
                 </li>
                 <li><a href="#" className="head-title">SUBMISSIONS</a>
                     <ul className="menu vertical">
-                        <li><a href="/submissions">Submissions</a></li>
-                        <li><a href="/awards">Idaho Prize</a></li>
+                        <li><Link to="/submissions">Submissions</Link></li>
+                        <li><Link to="/awards">Idaho Prize</Link></li>
                     </ul>
                 </li>
                 <li><a href="#" className="head-title">ABOUT</a>
                     <ul className="menu vertical">
-                        <li><a href="/about">About LHP</a></li>
-                        <li><a href="/mission">Mission</a></li>
-                        <li><a href="/contacts">Contacts</a></li>
+                        <li><Link to="/about">About LHP</Link></li>
+                        <li><Link to="/mission">Mission</Link></li>
+                        <li><Link to="/contacts">Contacts</Link></li>
                     </ul>
                 </li>
             </ul>

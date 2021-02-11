@@ -100,17 +100,19 @@ img#logo {
     margin-left: 100px;
     border-radius: 50%;
     box-shadow: 1px 1px 20px 1px #333333;  
-    animation-duration: 1.5s;
-    animation-name: float-in;
+    /* animation-duration: 1.5s; */
+    /* animation-name: float-in; */
 }
+
 img#logo:hover {
     box-shadow: 1px 1px 20px 1px #000000;
     width: 230px;
 }
-@keyframes float-in {
+
+/* @keyframes float-in {
     from { margin-left: -800px; }
     to { margin-left: 100px; }
-}
+} */
 
 /* Menu buttons */
 div.landing-menu div.middle a, 
@@ -119,13 +121,14 @@ div.landing-menu div.right a {
     font-weight: bold;
     text-shadow: 1px 1px 16px #aaaaaa; 
     text-decoration: none;
-    animation-duration: .75s;
-    animation-name: zoom-in;
+    /* animation-duration: .75s;
+    animation-name: zoom-in; */
 }
-@keyframes zoom-in {
+
+/* @keyframes zoom-in {
     from { font-size: 2px; }
     to { font-size: 20px; }
-}
+} */
  
 div.landing-menu div.middle a:hover, 
 div.landing-menu div.right a:hover {
@@ -133,7 +136,7 @@ div.landing-menu div.right a:hover {
 }
 div.button {
     background: transparent;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -155,16 +158,16 @@ button {
     background: rgba(245, 222, 179, 0.4);
     border-width: 0px;
     border-color: black;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     box-shadow: 1px 1px 20px 1px #333333;
     padding: 15px 5px;
-    animation-duration: .75s;
-    animation-name: zoomBtn;
+    /* animation-duration: .75s;
+    animation-name: zoomBtn; */
 }   
-@keyframes zoomBtn {
+/* @keyframes zoomBtn {
     from { visibility: visible; height: 5px; width: 5px; }
     to { visibility: visible; }
-}
+} */
 button:hover { box-shadow: 1px 1px 20px 1px #000000; }
 
 button#news { width: 90px; height: 90px; }
@@ -193,27 +196,27 @@ div.site-map-btn {
     align-items: center;
     width: 100px; height: 100px;
 }
-button#site-map {
+button#site-map, button#login-btn, button#reg-btn {
     height: 80px; width: 80px;
     margin: 0;
     padding: 5px;
     font-size: 18px;
     color: #000000;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     line-height: 24px;
     background-color: transparent;
-    animation-duration: .75s;
-    animation-name: zoom-in2;
+    /* animation-duration: .75s;
+    animation-name: zoom-in2; */
 }
 button#site-map:hover {
     color:  rgb(141, 21, 21);
     box-shadow: 1px 1px 20px 1px #000000; 
     height: 90px; width: 90px;
 }
-@keyframes zoom-in2 {
+/* @keyframes zoom-in2 {
     from { display: contents; font-size: 2px; }
     to { display: contents; font-size: 18px; }
-}
+} */
 
 /* Media queries */
 @media screen and (max-width: 400px) {

@@ -1,33 +1,33 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the postsController
 module.exports = {
   findAll: function(req, res) {
-    db.Book
+    db.Cover
       .findAll({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
-    db.Book
+  findOne: function(req, res) {
+    db.Cover
       .findOne({id: req.params.id})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.Book
+    db.Cover
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Book
+    db.Cover
       .findOneAndUpdate({ id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
-    db.Book
+  destroy: function(req, res) {
+    db.Cover
       .findOne({ id: req.params.id })
       .then(dbModel => dbModel.destroy())
       .then(dbModel => res.json(dbModel))

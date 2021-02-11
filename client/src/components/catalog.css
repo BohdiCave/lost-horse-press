@@ -1,0 +1,19 @@
+div.cat-results { width: 90%; padding: 0px 50px; }
+table#cat em {font-size: 16px;}
+table#cat img.cover { width: 200px; }
+table#cat th.cover { width: 20%; }
+table#cat h3, table#cat h5#praise { margin: 0px; }
+h5#author { border-bottom: 1px dotted black; }
+table#cat td.blurb div#blurb {
+    font-size: 16px;
+    margin-bottom: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    border-bottom: 1px dotted black;
+    padding: 10px 30px 10px 0px;
+}
+[overflow] {
+    text-align: left;
+}
+table#cat p, table#cat h3 { text-shadow: none; }

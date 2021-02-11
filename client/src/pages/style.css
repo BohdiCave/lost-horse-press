@@ -1,0 +1,179 @@
+/* General */
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+body {
+    background-color: rgb(245, 222, 179);
+}
+
+.hide { visibility: hidden; }
+
+/* Off-canvas site map stylings */
+.off-canvas { 
+    background-color: rgb(245, 222, 179); 
+}
+.off-canvas a { 
+    color: rgb(141, 21, 21); 
+    padding: 0px 5px; 
+}
+.off-canvas ul { 
+    list-style-type: none;
+    background: none; 
+    box-shadow: none; 
+    width: 90%; 
+    margin-left: 15px; 
+    border-radius: 0px;
+    font-size: 35px;
+}
+.off-canvas ul li ul.menu.vertical { 
+    background-color: rgba(100, 100, 100, 0.2); 
+    padding: 5px 0px;
+    width: 80%; 
+    border-radius: 10px; 
+    box-shadow: 1px 1px 8px rgb(0, 0, 0);
+}
+.off-canvas ul li ul.menu.vertical li a { 
+    padding: 5px 10px; 
+    line-height: 22px;
+    text-shadow: 1px 1px 48px rgb(245, 222, 179); 
+    font-size: 18px;
+}
+.off-canvas ul li ul.menu.vertical li a:hover { 
+    border-radius: 10px; 
+    box-shadow: 1px 1px 8px #000000; 
+    font-size: 22px;}
+.off-canvas a.title { font-size: 20px; }
+
+/* Main content */
+div.container {
+    background: url('./idaho_mountains.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 650px;
+    margin-top: -140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.landing-menu {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 4px 1px #000000;
+    width: 600px;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+div.left {
+    width: 40%;
+}
+div.right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Logo */ 
+div.left a {
+    height: 240px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+img#logo {
+    width: 220px;
+    margin-left: 80px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px 1px #333333;  
+}
+img#logo:hover { width: 230px; }
+
+/* Main menu */
+div.right div.button:hover { background: rgba(245, 245, 245, 0.5); }
+div.right div.button {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px; 
+    padding: 0px;
+}
+button#cat, button#sub, button#news, button#about {
+    border: none;  
+    width: 150px; 
+    height: 50px; 
+    margin: 5px
+}
+div.landing-menu div.right a {
+    color: whitesmoke;
+    font-weight: bold;
+    text-shadow: 1px 1px 32px #333; 
+    text-decoration: none;
+}  
+div.landing-menu div.right a:hover {
+    color:  rgb(141, 21, 21);
+}
+
+/* Site Map, Login and Signup button */
+div.off-canvas-btn {
+    height: 100px; 
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+div.site-map-btn, div.login-reg-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+button#site-map, 
+button#login-btn, 
+button#reg-btn {
+    box-shadow: 1px 1px 2px 1px #333333;
+    width: 120px;
+    margin: 15px;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: transparent;
+}
+button#site-map:hover,
+button#login-btn:hover,
+button#reg-btn:hover {
+    color:  rgb(141, 21, 21);
+    box-shadow: 1px 1px 4px 1px #000000; 
+}
+
+/* Media queries */
+@media screen and (max-width: 400px) {
+    div.off-canvas-btn {
+        display: flex;
+        flex-direction: row;
+        margin: 0px; 
+        margin-bottom: 10px; 
+    }
+    button#site-map, button#login-btn, button#reg-btn { width:80px; } 
+    div.container { margin-top: -110px;}
+    div.landing-menu {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    div.left a { margin: 0px; flex-direction: column; }
+    img#logo { margin-left: 0px; width: 180px; }
+    div.right div.button button a { font-size: 20px; }
+    button#news, button#about, button#cat, button#sub { width: 160px; height: 30px; }
+}
