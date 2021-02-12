@@ -6,7 +6,7 @@ import {registerUser} from "../../actions/authActions";
 import classnames from "classnames";
 import $ from 'jquery';
 import Foundation from 'foundation-sites';
-import "./style.css";
+import "../styles/login.css";
 
 class Register extends Component {
   

@@ -6,7 +6,7 @@ import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import $ from 'jquery';
 import Foundation from 'foundation-sites';
-import "./style.css";
+import "../styles/login.css";
 
 class Login extends Component {
 

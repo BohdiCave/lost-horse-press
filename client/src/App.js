@@ -7,10 +7,11 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Home from "./pages/Home";
-import Books from "./pages/Books";
-import NoMatch from "./pages/NoMatch";
-import Landing from "./pages/Landing";
+import Home from "./components/pages/Home";
+import Books from "./components/pages/Books";
+import NoMatch from "./components/pages/NoMatch";
+import Landing from "./components/pages/Landing";
+import About from "./components/pages/About";
 
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -47,6 +48,7 @@ export default function App() {
         <Switch>
           <Route exact path="/"> <Landing /> </Route>
           <Route exact path="/home"> <Home /> </Route>
+          <Route exact path="/about"> <About/></Route>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />

@@ -1,0 +1,110 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+}
+  
+.modal-main {
+    position:fixed;
+    background-color: rgb(0, 0, 0);
+    width: 80%;
+    height: 250px;
+    top:50%;
+    left:50%;
+    padding: 20px;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+  
+.display-block {
+    display: block;
+}
+  
+.display-none {
+    display: none;
+}
+div.close-btn {
+    width: 260px;
+}
+div.site-map {
+    width: 300px;
+    height: 180px;
+    margin: 10px;
+    padding: 10px 0px 10px; 
+    border-radius: 5px;
+    background-color:rgb(120, 21, 21);
+}
+div.site-map:hover {
+    box-shadow: 1px 1px 4px 2px #666; 
+
+}
+div.site-map ul.site-map-menu {
+    list-style: none;
+}
+
+div.site-map ul li {
+    margin: 5px 0px;
+    background-color: rgb(120, 21, 21);
+    margin: 0;
+}
+
+ul#newsMenu, ul#aboutMenu, ul#subsMenu, ul#catMenu {
+    margin-left: 10px;
+}
+
+ul#newsMenu li, ul#aboutMenu li, ul#subsMenu li, ul#catMenu li {
+    margin-left: 5px;
+}
+
+ul#newsSubmenu, ul#aboutSubmenu, ul#subsSubmenu, ul#catSubmenu {
+    list-style: none;
+}
+
+ul#newsMenu li span, ul#aboutMenu li span, ul#subsMenu li span, ul#catMenu li span, 
+ul#newsSubmenu li a, ul#aboutSubmenu li a, ul#subsSubmenu li a, ul#catSubmenu li a {
+    color: rgb(253, 251, 245);
+    font-size: 18px;
+}
+
+ul#newsSubmenu li a:hover, ul#aboutSubmenu li a:hover, ul#subsSubmenu li a:hover, ul#catSubmenu li a:hover {
+    color: rgb(253, 251, 245);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    font-size: 22px;
+}
+
+/*.site-map-submenu.submenu.is-dropdown-submenu.vertical*/
+
+
+button#modal-close {
+    border-radius: 5px;
+    width: 130px;
+    margin: 15px;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: rgb(141, 21, 21);
+    color: rgb(253, 251, 245);
+}
+
+button#modal-close:hover {
+    box-shadow: 1px 1px 4px 2px #666; 
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+
+}
+
+img#side-logo {
+    width: 130px;
+    border-radius: 5px;
+    margin: 10px 15px;  
+}
+img#side-logo:hover {
+    width: 132px;
+    height: 106px;
+    margin-bottom: 8px;
+    box-shadow: 1px 1px 8px 2px rgb(120, 21, 21);
+}

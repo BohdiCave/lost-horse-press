@@ -44,11 +44,3 @@ export const deletePost = (id) => dispatch => {
         })
       );
 }
-
-    // for (let i = 0; i < posts.length; i++) {
-    //     if (posts[i].id === delID) {  
-    //         delPost = posts.splice(i, 1);
-    //     }
-    // }
-
-    // setPosts(posts.push(delPost));

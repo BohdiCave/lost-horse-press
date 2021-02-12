@@ -11,12 +11,12 @@ export default function OffCanvasWrapper({name}) {
     });
 
     return(
-        <div className="card">
+        <div className="card" id={name}>
             <div className="card-section title">
-                {name==="one" ? <h4>Mountain and Flower - Selected Poems of Mykola Vorobiov</h4>
-                : name==="two" ? <h4>Carbon: Song of Crafts</h4>
-                : name==="three" ? <h4>The River People</h4>
-                : name==="four" ? <h4>My Mother's Red Ford - New and Selected Poems, 1986 - 2020</h4>
+                {name==="one" ? <h5>Mountain and Flower - Selected Poems of Mykola Vorobiov</h5>
+                : name==="two" ? <h5>Carbon: Song of Crafts</h5>
+                : name==="three" ? <h5>The River People</h5>
+                : name==="four" ? <h5>My Mother's Red Ford - New and Selected Poems, 1986 - 2020</h5>
                 : "error"}
             </div>
             <div className="card-section book-cover">

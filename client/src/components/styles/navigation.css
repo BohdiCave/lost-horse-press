@@ -1,0 +1,79 @@
+/* Navigation */
+div#wrapper .top-bar, div#wrapper .top-bar ul {
+    background-color: rgb(253, 251, 245);
+}
+div#wrapper .title-bar .menu-icon { 
+    margin-right: 10px; 
+}
+div#wrapper .top-bar {
+    padding: 0px 10px 0px 0px;
+}
+div#navigation {
+    align-items: flex-start;
+}
+.top-bar-right{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.top-bar img { 
+    width: 150px;
+    margin: 10px 0px 0px 10px;
+}
+.top-bar .button { 
+    background-color: black; 
+}
+.top-bar .button:hover, .top-bar .button:focus { 
+    background-color: rgb(141, 21, 21); 
+}
+
+#lhp-brand { 
+    margin: 0px; 
+    padding: 0px; 
+}
+
+
+/* Dropdown */
+a#news, a#cat, a#about, a#subs { 
+    color: black; 
+    font-size: 18px; 
+    margin-top: 25px;
+    padding: 0px 25px;
+}
+a#news:hover, a#cat:hover, a#about:hover, a#subs:hover,
+a#cat:active, .is-dropdown-submenu a:hover { 
+    color: rgb(141, 21, 21); 
+}
+a#cat::after { 
+    border-top-color: rgb(141, 21, 21);
+}
+.dropdown.menu > li.opens-right > .is-dropdown-submenu#cat-drop {
+    top: 50%;
+    min-width: 250px; 
+}
+.is-dropdown-submenu-item > a { 
+    font-size: 16px; 
+    margin-top: 5px; 
+    line-height: 1.6;  
+    color: black;
+}
+
+.top-bar-right form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#search-btn, button#site-map {
+    width: 100px;
+    height: 40px;
+}
+#search-field {
+    margin: 0px 15px;
+    height: 40px;
+}
+
+@media screen and (max-width: 400px) {
+    #site-map { margin: 0px 10px 10px; }
+} 

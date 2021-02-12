@@ -5,7 +5,7 @@ import { getPosts, deletePost } from "../../actions/postActions";
 
 class Posts extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.getPosts()
     };
 

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API";
-import Navbar from '../components/Navbar';
-import MainGrid from '../components/MainGrid';
-import Footer from '../components/Footer';
+import API from "../../utils/API";
+// components
+import Navbar from '../Navbar';
+import MainGrid from '../MainGrid';
+import Footer from '../Footer';
 
 function Books() {
   // Setting our component's initial state

@@ -94,7 +94,7 @@ div#images {
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
-img.cover {
+div#images img.cover {
     width: 150px;
 }
 
