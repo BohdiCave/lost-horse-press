@@ -1,4 +1,4 @@
-/* Styles for Login, Signup, and Dashboard pages*/
+/* Styles for LOGIN, SIGNUP, and DASHBOARD pages*/
 
 /* Common styles */
 div#register, div#login {
@@ -12,10 +12,11 @@ div#register, div#login {
 }
 
 h3, p { text-shadow: 1px 1px 2px black; }
-
+div#login label, div#register label { font-size: 30px; }
 div#register a, div#login a, div#dashboard span {
     color: navy;
     text-shadow: none;
+    font-weight: bold;
 }
 
 div.row {
@@ -74,13 +75,12 @@ div.col-half {
 div#dashboard div#posts, div#dashboard div#covers {
     flex-direction: column;
 }
+#dashboard .status span {
+    font-weight: bold;
+}
 button#logout {
-    font-size: 16px;
     margin: 0px 5px;
     padding: 5px;
-}
-div.status, div.status span {
-    font-size: 16px;
 }
 div#dashboard div#dash {
     display: flex;
@@ -88,11 +88,20 @@ div#dashboard div#dash {
 }
 div#dash h3 {
     text-shadow: 1px 1px 2px #aaa;
+    font-family: inherit;
+    font-size: 60px;
+    font-weight: bold;
 }
-div#images {
+.header h4 {
+    font-family: inherit;
+    font-size: 40px;
+    font-weight: bold;
+}
+div#covers div#images {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    width: 100%;
 }
 div#images img.cover {
     width: 150px;
@@ -100,9 +109,7 @@ div#images img.cover {
 
 /* Posts and Covers tables */
 tr.post {
-    /* background-color: whitesmoke; */
     margin-bottom: 5px;
-    /* border-bottom: 1px solid black; */
 }
 tr.post th, tr.post td {
     font-size: 14px;

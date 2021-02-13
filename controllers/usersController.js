@@ -17,7 +17,7 @@ module.exports = {
         if (!isValid) { return res.status(400).json(errors); }
         // Check if login name already exists in the db, add if not        
         db.User
-          .findOne({ user_login: req.body.user_login })
+          .findOne({where: {user_login: req.body.user_login } })
           .then(user => {
             if (user) { return res.status(400).json({ user_login: "Login already exists" }); } 
             else { 
@@ -55,7 +55,7 @@ module.exports = {
         
         // Find user by email
         db.User
-          .findOne({ user_login })
+          .findOne({where: { user_login }})
           .then(user => { 
             // Check if user exists
             if (!user) { return res.status(404).json({ usernotfound: "User not found" }); }

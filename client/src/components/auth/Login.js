@@ -71,7 +71,7 @@ class Login extends Component {
           </div>
           <div className="row">
             <div classname="col">    
-              <h3>Login below</h3>
+              <h3>Login to Lost Horse Press</h3>
               <p>Don't have an account? <em><Link to="/register">Register</Link></em></p>
             </div>
           </div>

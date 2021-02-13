@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {registerUser} from "../../actions/authActions";
 import classnames from "classnames";
-import $ from 'jquery';
-import Foundation from 'foundation-sites';
 import "../styles/login.css";
 
 class Register extends Component {
@@ -52,12 +50,6 @@ class Register extends Component {
     console.log(newUser);
     this.props.registerUser(newUser, this.props.history);
   };
-  
-  useCallback(node) {
-    if ( node !== null ) {
-        $(node).foundation();  // Initiate Foundation code at here.
-    }
-  };
 
   render() {
     const { errors } = this.state;
@@ -70,7 +62,7 @@ class Register extends Component {
         </div>
         <div className="row">
           <div className="col">
-            <h3>Register below</h3>
+            <h3>Register for Lost Horse Press</h3>
             <p> Already have an account? <em> 
             <Link to="/login">Log in</Link></em></p>
           </div>
