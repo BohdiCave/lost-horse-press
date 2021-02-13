@@ -1,13 +1,16 @@
 /* Main content */
 main, div.off-canvas-wrapper { margin: 0px; background: rgb(253, 251, 245)}
 h2#featured-list {
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Amatic SC', cursive;
     text-align: center;
-    margin: 20px 0px 0px;
+    font-size: 60px;
+    font-weight: bold;
 }
-div.card-section h5 { 
+div.card-section h5 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     width: 80%;
-    font-size: 20px; 
-    font-style: italic;
+    font-size: 24px; 
     text-align: center;
 }
 #one, #two, #three, #four {
@@ -28,11 +31,12 @@ div.card-section.title {
 div.card-section.desc {
     height: 50px;
     padding: 20px;
-    font-size: 16px;
 }
 div.card-section.desc p { 
     text-align: center; 
     text-shadow: none; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
 }
 div.card-section.book-cover{
     height: 300px;

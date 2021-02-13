@@ -1,3 +1,4 @@
+/* main content */
 div.cat-results { 
     width: 90%; 
     padding: 0px 50px; 
@@ -5,7 +6,12 @@ div.cat-results {
 h2#cat-list {
     margin: 0px 0px 20px; 
     text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 60px;
 }
+
+/* Table of catalog listings*/
 table#cat tbody {
     border: 0;
 }
@@ -48,10 +54,51 @@ table#cat td.blurb em {
     font-size: 18px; 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 table#cat td.blurb div#blurb p {
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
 }
 table#cat p, table#cat h3 { 
     text-shadow: none; 
+}
+
+@media screen and (max-width: 470px) {
+    div.cat-results {
+        width: 100%;
+        padding: 0;
+        margin: 0;    
+    } 
+    table#cat tbody tr.cat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    table#cat tbody tr th.cover, table#cat tbody tr td.blurb {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    img.cover {
+        min-width: 200px;
+        margin: 20px;
+    }
+    table#cat h3#title {
+        margin: 0px 30px;
+        text-align: center;
+    }
+    table#cat td.blurb div#blurb {
+        font-size: 16px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin-bottom: 10px;
+        padding: 0px 30px;
+        max-height: 500px;
+        border-bottom: none;
+    }
+    table#cat td.blurb em {
+        font-size: 16px;
+    }
 }

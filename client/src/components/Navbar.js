@@ -36,8 +36,8 @@ export default function NavBar() {
               <a id="drop-parent" href="#" id="cat">Catalog</a>
               <ul className="menu vertical" id="cat-drop">
                   <li><a href="/catalog">Catalog listings</a></li>
-                  <li><a href="/series#Ukrainian">Poetry Series</a></li>
-                  <li><a href="/series#HR">Human Rights Series</a></li>
+                  <li><a href="/series">Book Series</a></li>
+                  <li><a href="/order">Place an Order</a></li>
               </ul>
             </li>
             <li><a href="/submissions" id="subs">Submissions</a></li>

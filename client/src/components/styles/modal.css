@@ -4,107 +4,149 @@
     left: 0;
     width:100%;
     height: 100%;
-}
-  
+} 
 .modal-main {
     position:fixed;
     background-color: rgb(0, 0, 0);
     width: 80%;
-    height: 250px;
+    height: 300px;
+    padding: 20px;
     top:50%;
     left:50%;
-    padding: 20px;
     transform: translate(-50%,-50%);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     border-radius: 5px;
 }
-  
-.display-block {
-    display: block;
-}
-  
-.display-none {
-    display: none;
-}
-div.close-btn {
-    width: 260px;
-}
+.display-block { display: block; } 
+.display-none { display: none; }
+div.close-btn { width: 260px; }
 div.site-map {
     width: 300px;
-    height: 180px;
+    height: 240px;
     margin: 10px;
-    padding: 10px 0px 10px; 
+    padding: 10px 0px 10px 10px; 
     border-radius: 5px;
     background-color:rgb(120, 21, 21);
 }
 div.site-map:hover {
     box-shadow: 1px 1px 4px 2px #666; 
-
 }
 div.site-map ul.site-map-menu {
     list-style: none;
 }
-
 div.site-map ul li {
     margin: 5px 0px;
     background-color: rgb(120, 21, 21);
     margin: 0;
 }
-
-ul#newsMenu, ul#aboutMenu, ul#subsMenu, ul#catMenu {
-    margin-left: 10px;
-}
-
-ul#newsMenu li, ul#aboutMenu li, ul#subsMenu li, ul#catMenu li {
-    margin-left: 5px;
-}
-
-ul#newsSubmenu, ul#aboutSubmenu, ul#subsSubmenu, ul#catSubmenu {
-    list-style: none;
-}
-
-ul#newsMenu li span, ul#aboutMenu li span, ul#subsMenu li span, ul#catMenu li span, 
-ul#newsSubmenu li a, ul#aboutSubmenu li a, ul#subsSubmenu li a, ul#catSubmenu li a {
+span { 
     color: rgb(253, 251, 245);
-    font-size: 18px;
 }
-
-ul#newsSubmenu li a:hover, ul#aboutSubmenu li a:hover, ul#subsSubmenu li a:hover, ul#catSubmenu li a:hover {
+ul#newsMenu, ul#aboutMenu, 
+ul#subsMenu, ul#catMenu {
+    margin-left: 10px;
+    background: rgb(120, 21, 21);
+}
+ul#newsMenu li, ul#aboutMenu li, 
+ul#subsMenu li, ul#catMenu li { 
+    padding-left: 45px; 
+    height:50px;
+}
+ul#newsMenu li a, ul#aboutMenu li a, 
+ul#subsMenu li a, ul#catMenu li a {
+    color: rgb(253, 251, 245);  
+}
+ul#newsMenu li a:hover, ul#aboutMenu li a:hover, 
+ul#subsMenu li a:hover, ul#catMenu li a:hover {
     color: rgb(253, 251, 245);
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
-    font-size: 22px;
+    font-size: 34px;
 }
-
-/*.site-map-submenu.submenu.is-dropdown-submenu.vertical*/
-
 
 button#modal-close {
     border-radius: 5px;
-    width: 130px;
-    margin: 15px;
-    padding: 10px;
-    font-size: 18px;
+    width: 150px;
+    margin: 10px;
+    padding: 15px 0px;
     line-height: 24px;
     background-color: rgb(141, 21, 21);
     color: rgb(253, 251, 245);
 }
-
 button#modal-close:hover {
     box-shadow: 1px 1px 4px 2px #666; 
     text-shadow: 1px 1px 2px rgb(0, 0, 0);
-
 }
 
 img#side-logo {
-    width: 130px;
+    width: 150px;
     border-radius: 5px;
-    margin: 10px 15px;  
+    margin: 10px 10px;  
 }
 img#side-logo:hover {
-    width: 132px;
-    height: 106px;
+    width: 152px;
+    height: 122px;
     margin-bottom: 8px;
     box-shadow: 1px 1px 8px 2px rgb(120, 21, 21);
+}
+
+.icon1, .icon2, .icon3 { position: absolute; }
+#newsMenu .icon1 { top: 98px; left: 215px;}
+#newsMenu .icon2 { top: 146px; left: 215px;}
+#catMenu .icon1 { top: 98px; left: 430px;}
+#catMenu .icon2 { top: 146px; left: 430px;}
+#catMenu .icon3 { top: 195px; left: 430px;}
+#subsMenu .icon1 { top: 98px; left: 650px;}
+#subsMenu .icon2 { top: 146px; left: 650px;}
+#aboutMenu .icon1 { top: 98px; left: 865px;}
+#aboutMenu .icon2 { top: 146px; left: 865px;}
+#aboutMenu .icon3 { top: 195px; left: 865px;}    
+
+@media screen and (max-width: 470px) {
+    .modal-main {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    div.site-map {
+        display: flex;
+        width: 320px;
+        margin: 5px;
+        padding: 0px 15px;
+    }
+    button#modal-close {
+        margin-left: 5px;
+    }
+    div.site-map span {
+        font-size: 28px;
+        margin-top: 5px;
+        width: 40%;
+    }
+    div.site-map ul { height: 80px; }
+    ul#newsMenu li a, ul#aboutMenu li a, 
+    ul#subsMenu li a, ul#catMenu li a {
+        font-size: 28px;
+    }
+    ul#newsMenu li, ul#aboutMenu li, 
+    ul#subsMenu li, ul#catMenu li {
+        height:40px;
+    }
+    ul#newsMenu li a:hover, ul#aboutMenu li a:hover, 
+    ul#subsMenu li a:hover, ul#catMenu li a:hover {
+        color: rgb(253, 251, 245);
+        text-shadow: 1px 1px 2px rgb(0, 0, 0);
+        font-size: 34px;
+    }
+    img#side-logo{ display: none; }
+    #newsMenu .icon1 { top: 110px; left: 170px;}
+    #newsMenu .icon2 { top: 150px; left: 170px;}
+    #catMenu .icon1 { top: 248px; left: 170px;}
+    #catMenu .icon2 { top: 288px; left: 170px;}
+    #catMenu .icon3 { top: 328px; left: 170px;}
+    #subsMenu .icon1 { top: 386px; left: 170px;}
+    #subsMenu .icon2 { top: 426px; left: 170px;}
+    #aboutMenu .icon1 { top: 524px; left: 170px;}
+    #aboutMenu .icon2 { top: 564px; left: 170px;}
+    #aboutMenu .icon3 { top: 604px; left: 170px;}
 }

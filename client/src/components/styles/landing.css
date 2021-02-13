@@ -1,13 +1,14 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC');
 /* General */
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
 }
-
 body {
     background-color: rgb(245, 222, 179);
 }
-
 main {
     display: flex;
     flex-direction: row;
@@ -26,15 +27,45 @@ div.container {
     justify-content: flex-start;
     align-items: center;
 }
-div.side-btn {
+/* Header and title (buttons - see below) */
+header.side-btn {
     width: 100%;
+    height: 100px; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
 }
+div.site-map-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+div.side-btn-left, 
+div.side-btn-right {
+    padding: 10px;
+}
+div.login-reg-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+div#brand h1{
+    text-shadow: 2px 2px 64px rgb(253, 251, 245);
+    font-family: 'Amatic SC', cursive;
+    font-size: 60px;
+    margin-top: 10px;
+    height: 60px;
+}
+div#brand h2 {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+/* Main menu */
 div.landing-menu {
     background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 1px 1px 4px 1px #000;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.7);
     width: 600px;
     margin-top: 50px;
     padding: 30px 0px;
@@ -70,66 +101,48 @@ img#logo {
 }
 img#logo:hover { width: 230px; }
 
-/* Main menu */
-div.right div.menu-btn:hover { 
-    background: rgba(245, 245, 245, 0.5); 
-    transition: background-color .25s ease-out,color .25s ease-out;
-}
+/* Buttons - main menu */
 div.right div.menu-btn {
-    background: transparent;
+    background: rgba(141, 21, 21, 0.5);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px; 
+    margin: 15px 0px; 
     padding: 0px;
 }
 button#cat, button#sub, 
 button#news, button#about {
-    border: none;  
-    width: 150px; 
-    height: 50px; 
-    margin: 5px
+    border: none; 
+    width: 160px; 
+    height: 60px; 
+    font-size: 36px;
+    color: rgb(253, 251, 245);
 }
-div.landing-menu div.right a {
-    color: whitesmoke;
-    font-weight: bold;
-    text-shadow: 1px 1px 32px #333; 
-    text-decoration: none;
-}  
-div.landing-menu div.right a:hover {
+div.right div.menu-btn:hover { 
+    background: rgba(245, 245, 245, 0.5);
+    transition: background-color .25s ease-out,color .25s ease-out;
+}
+button#cat:hover, button#sub:hover, 
+button#news:hover, button#about:hover {
     color:  rgb(141, 21, 21);
+    font-weight: bold;
     transition: background-color .25s ease-out,color .25s ease-out;
 }
 
-/* Site Map, Login and Signup button */
-div.side-btn {
-    height: 100px; 
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-div.site-map-btn, 
-div.login-reg-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
+/* Buttons - header */
 div.site-map-btn button#site-map, 
 button#login-btn, 
 button#reg-btn {
     box-shadow: 1px 1px 2px 1px #333333;
+    background: rgba(141, 21, 21, 0.3);
+    color: rgb(253, 251, 245);
     width: 120px;
     height: 40px;
     margin: 15px;
     padding: 5px;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 24px;
-    background-color: transparent;
-    color: rgb(245, 222, 179);
     transition: background-color .25s ease-out,color .25s ease-out;
 }
 div.site-map-btn button#site-map:hover,
@@ -137,40 +150,45 @@ button#login-btn:hover,
 button#reg-btn:hover {
     color:  rgb(141, 21, 21);
     box-shadow: 1px 1px 4px 1px #000000; 
+    background: rgba(245, 245, 245, 0.5);
 }
 
-/* Media queries */
-@media screen and (max-width: 400px) {
-    div.side-btn {
-        display: flex;
-        flex-direction: row;
-        margin: 0px; 
-        margin-bottom: 10px; 
-    }
-    button#site-map, 
-    button#login-btn, 
-    button#reg-btn { 
-        width:80px; 
-    } 
-    div.landing-menu {
-        margin-top: 100px;
+/* Media queries for mobile */
+@media screen and (max-width: 470px) {
+    header.side-btn {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 10px; 
+        margin-bottom: 0px; 
+        height: auto;
     }
-    div.left a { 
-        margin: 0px; 
-        flex-direction: column; 
+    div.side-btn-left, div.side-btn-right {padding: 10px 0px;}
+    div#brand h1 {
+        margin: 0; 
+        padding: 0px 10px; 
+        height: 65px; 
+        background:rgba(0, 0, 0, 0.5); 
+        color: rgb(253, 251, 245);
     }
-    img#logo { 
-        margin-left: 0px; 
-        width: 180px; 
+    div#brand h2 {
+        font-size: 35px; 
+        background:rgba(0, 0, 0, 0.5); 
+        color:rgb(253, 251, 245);
     }
-    div.right div.button button a { 
-        font-size: 20px; 
+    div.login-reg-btn{flex-direction:row;}
+    div.login-reg-btn a {height: 60px;}
+    div.site-map-btn button#site-map { width: 100px; background: rgba(141, 21, 21, 0.8);} 
+    button#login-btn, button#reg-btn { width: 100px; margin: 5px; background:rgba(141, 21, 21, 0.8); } 
+    div.landing-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0px;
+        padding-top: 0px;
     }
-    button#news, button#about, 
-    button#cat, button#sub { 
-        width: 160px; height: 30px; 
-    }
+    div.left a { margin: 0px; flex-direction: column; }
+    img#logo { margin-left: 0px; width: 180px; }
+    div.right div.button button a { font-size: 20px; }
+    button#news, button#about, button#cat, button#sub { width: 160px; height: 30px; }
 }

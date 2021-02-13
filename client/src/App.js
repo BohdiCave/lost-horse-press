@@ -1,18 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// Redux
+import { Provider } from "react-redux";
+import store from "./store";
+// auth
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-
-import { Provider } from "react-redux";
-import store from "./store";
-
+// fonts
+import './app.css';
+// components - pages
 import Home from "./components/pages/Home";
 import Books from "./components/pages/Books";
 import NoMatch from "./components/pages/NoMatch";
 import Landing from "./components/pages/Landing";
 import About from "./components/pages/About";
-
+// auth components
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import PrivateRoute from "./components/private-route/PrivateRoute";

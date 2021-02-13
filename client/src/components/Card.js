@@ -26,7 +26,7 @@ export default function OffCanvasWrapper({name}) {
                 : name==="four" ? <img src="/assets/images/my-mothers-red-ford.jpg" className="cover featured" alt="Book Cover - My Mother's Red Ford by Roy Bentley"/> : "error"}
             </div>
             <div className="card-section desc">
-                {name==="one" ? <p>translated from the Ukrainian by Maria G. Rewakowicz</p> 
+                {name==="one" ? <p>translated from the Ukrainian <br></br> by Maria G. Rewakowicz</p> 
                 : name==="two" ? <p>by Svetlana Lavochkina</p>
                 : name==="three" ? <p>by Polly Buckhingham</p>
                 : name==="four" ? <p>by Roy Bentley</p> : "error"}

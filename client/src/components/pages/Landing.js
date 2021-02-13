@@ -18,14 +18,15 @@ export default function Landing() {
   return (
     <main>
       <div className="container">
-        <div className="side-btn"> 
+        <header className="side-btn"> 
           <div className="side-btn-left">   
             <ZoomIn className="site-map-btn">
               <SiteMapBtn />
             </ZoomIn>
           </div>
-          <div>
+          <div id="brand">
             <h1>LOST HORSE PRESS</h1>
+            <h2>Sandpoint, Idaho</h2>
           </div>
           <div className="side-btn-right">
             <ZoomIn className="login-reg-btn">
@@ -38,8 +39,8 @@ export default function Landing() {
             </ZoomIn>
           </div> 
 
-        </div>
-        <div className="main-menu">
+        </header>
+        <section className="main-menu">
                 
           <div className="landing-menu">
             <div className="left">
@@ -50,24 +51,32 @@ export default function Landing() {
                     
             <div className="right">
               <ZoomIn className="menu-btn">
-                <button className="link" id="news"><Link to="/news">NEWS</Link></button>
+                <Link to="/news">
+                  <button className="link" id="news">NEWS</button>
+                </Link>
               </ZoomIn>
 
               <ZoomIn className="menu-btn">
-                <button className="link" id="cat"><Link to="/catalog">CATALOG</Link></button>
+                <Link to="/catalog">
+                  <button className="link" id="cat">CATALOG</button>
+                </Link>
               </ZoomIn>
 
               <ZoomIn className="menu-btn">
-                <button className="link" id="sub"><Link to="/submissions">SUBMISSIONS</Link></button>
+                <Link to="/submissions">
+                  <button className="link" id="sub">SUBMISSIONS</button>
+                </Link>
               </ZoomIn>
 
               <ZoomIn className="menu-btn">
-                <button className="link" id="about"><Link to="/about">ABOUT</Link></button>
+                <Link to="/about">
+                  <button className="link" id="about">ABOUT</button>
+                </Link>
               </ZoomIn>
             </div>
           </div>
 
-        </div>
+        </section>
       </div>   
     </main>
   );

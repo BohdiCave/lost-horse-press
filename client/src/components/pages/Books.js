@@ -4,11 +4,11 @@ import API from "../../utils/API";
 import Navbar from '../Navbar';
 import MainGrid from '../MainGrid';
 import Footer from '../Footer';
+import '../styles/catalog.css';
 
 function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
-  // const [formObject, setFormObject] = useState({})
 
   // Load all books and store them with setBooks
   useEffect(() => {

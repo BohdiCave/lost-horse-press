@@ -18,46 +18,33 @@ export default function Modal({ handleClose, show }) {
           </button>
         </div>
         <div className="site-map">
+          <span>NEWS</span>
           <ul className="site-map-menu" id="newsMenu">
-            <li><span>NEWS</span>
-                <ul id="newsSubmenu">
-                    <li><a href="/news"><FaNewspaper style={{position: "absolute", top: "78px", left: "215px"}}/> Latest News</a></li>
-                    <li><a href="/featured"><MdNewReleases style={{position: "absolute", top: "110px", left: "215px"}}/>New Releases</a></li>
-                </ul>
-            </li>
+            <li><a href="/news"><FaNewspaper className="icon1" /> Latest News</a></li>
+            <li><a href="/featured"><MdNewReleases className="icon2"/>New Releases</a></li>  
           </ul>
         </div>
         <div className="site-map">
-          <ul id="catMenu" className="site-map-menu" >
-            <li><span>BOOK CATALOG</span>
-              <ul id="catSubmenu">
-                  <li><a href="/catalog"><IoLibrarySharp style={{position: "absolute", top: "78px", left: "430px"}}/> Listings</a></li>
-                  <li><a href="/series"><FaListOl style={{position:"absolute",top: "110px", left: "430px"}}/> Series</a></li>
-                  <li><a href="/order"><FaShoppingCart style={{position:"absolute", top:"143px", left: "430px"}}/> Order</a></li>
-              </ul>
-            </li>
+          <span>BOOK CATALOG</span>
+          <ul id="catMenu" className="site-map-menu">  
+            <li><a href="/catalog"><IoLibrarySharp className="icon1" /> Listings</a></li>
+            <li><a href="/series"><FaListOl className="icon2" /> Series</a></li>
+            <li><a href="/order"><FaShoppingCart className="icon3" /> Order</a></li>
           </ul>
         </div>
         <div className="site-map">
+        <span>SUBMISSIONS</span>
           <ul className="site-map-menu" id="subsMenu">
-            <li>
-              <span>SUBMISSIONS</span>
-              <ul id="subsSubmenu">
-                  <li><a href="/submissions"><IoSendSharp style={{position: "absolute", top:"78px", left: "650px"}}/> Submissions</a></li>
-                  <li><a href="/awards"><FaAward style={{position: "absolute", top: "110px", left: "650px"}}/> Poetry Prize</a></li>
-              </ul>
-            </li>
+            <li><a href="/submissions"><IoSendSharp className="icon1" /> Submissions</a></li>
+            <li><a href="/awards"><FaAward className="icon2" /> Poetry Prize</a></li>
           </ul>
         </div>
         <div className="site-map">
+          <span>ABOUT</span>
           <ul id="aboutMenu" className="site-map-menu" >
-            <li><span>ABOUT</span>
-                <ul id="aboutSubmenu">
-                    <li><a href="/about"><FaInfoCircle style={{position: "absolute", top:"78px", left: "865px"}}/> About LHP</a></li>
-                    <li><a href="/mission"><FaBullhorn style={{position: "absolute", top: "110px", left: "865px"}}/> Mission</a></li>
-                    <li><a href="/contacts"><MdContactPhone style={{position:"absolute", top: "143px", left: "865px"}} />Contacts</a></li>
-                </ul>
-            </li>
+              <li><a href="/about"><FaInfoCircle className="icon1" /> About LHP</a></li>
+              <li><a href="/mission"><FaBullhorn className="icon2" /> Mission</a></li>
+              <li><a href="/contacts"><MdContactPhone className="icon3" />Contacts</a></li>
           </ul>
         </div>
        

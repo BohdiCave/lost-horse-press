@@ -17,7 +17,12 @@ module.exports = (sequelize, DataTypes) => {
       }, 
       onDelete: "cascade" 
     });
-    // User.hasMany(models.Article, { foreignKey: {allowNull: false}, onDelete: "restrict" }); 
+    // User.hasMany(models.Article, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }, 
+    //   onDelete: "restrict" 
+    // }); 
   };
 
   return User;
