@@ -1,26 +1,40 @@
+// express router
 const express = require('express');
 const router = require('./routes');
+// auth via passport
 const passport = require('passport');
-
-const db = require('./models');
+// database 
+let db, jaws_db;
+if (process.env.JAWSDB_URL) {
+  jaws_db = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  db = require('./models')
+}
+//running express app
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-// Define middleware here
+// middleware 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
+// static assets (on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
+// routes, both API and view
 app.use(router);
 app.use(passport.initialize());
 require('./config/passport')(passport);
-
 // Start the API server
-db.sequelize.sync({force: false}).then(() => {
-  app.listen(PORT, function() {
-    console.log(`🌎 ==> API server listening on PORT ${PORT}!`);
+if (process.env.JAWSDB_URL) {
+  jaws_db.sync({force:false}).then(() => {
+    app.listen(PORT, () => {
+      console.log(`API server with JawsDB listening on PORT ${PORT}!`);
+    });
   });
-});
+} else {
+  db.sequelize.sync({force: false}).then(() => {
+    app.listen(PORT, () => {
+      console.log(`🌎 ==> API server listening on PORT ${PORT}!`);
+    });
+  });
+}
