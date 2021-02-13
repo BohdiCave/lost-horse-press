@@ -4,13 +4,16 @@ const router = require('./routes');
 const Sequelize = require('sequelize');
 // auth via passport
 const passport = require('passport');
+
 // database 
-let db, jaws_db;
+let db;
 if (process.env.JAWSDB_URL) {
-  jaws_db = new Sequelize(process.env.JAWSDB_URL);
+  console.log(process.env.JAWSDB_URL);
+  db = new Sequelize(process.env.JAWSDB_URL);
 } else {
   db = require('./models')
 }
+
 //running express app
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,7 +30,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 // Start the API server
 if (process.env.JAWSDB_URL) {
-  jaws_db.sync({force:false}).then(() => {
+  db.sync({force:false}).then(() => {
     app.listen(PORT, () => {
       console.log(`API server with JawsDB listening on PORT ${PORT}!`);
     });
