@@ -83,7 +83,7 @@ export default function MainGrid(props) {
                     return(
                     <article key={article.article_name} id={article.article_name}>
                         <h2 className="artTitle">{article.article_title}</h2>
-                        <div id="excerpt" dangerouslySetInnerHTML={{ __html: article.article_excerpt}}></div>
+                        <div className="excerpt" dangerouslySetInnerHTML={{ __html: article.article_excerpt}}></div>
                         <a href="">Read the full article</a>
                         {/* link to the modal that loads the full text. */}
                     </article>

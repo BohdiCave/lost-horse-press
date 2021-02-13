@@ -1,6 +1,7 @@
 // express router
 const express = require('express');
 const router = require('./routes');
+const Sequelize = require('sequelize');
 // auth via passport
 const passport = require('passport');
 // database 
