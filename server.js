@@ -31,10 +31,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.get('/*', (req, res, next) => {
-  res.setHeader('Last-Modified', (newDate()).toUTCString());
-  next();
-});
 // Start the API server
 if (process.env.JAWSDB_URL) {
   db.sync({force:false}).then(() => {
