@@ -45,13 +45,13 @@ export default function Landing() {
           <div className="landing-menu">
             <div className="left">
               <SlideIn>
-                <a href="/home"><img src="/assets/images/lhp_logo_600x600.png" id="logo"/></a>
+                <a href="/"><img src="/assets/images/lhp_logo_600x600.png" id="logo"/></a>
               </SlideIn>    
             </div>
                     
             <div className="right">
               <ZoomIn className="menu-btn">
-                <Link to="/news">
+                <Link to="/home">
                   <button className="link" id="news">NEWS</button>
                 </Link>
               </ZoomIn>
