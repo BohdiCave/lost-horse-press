@@ -48,6 +48,7 @@ class Posts extends Component {
 
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
+  deletePost: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired
 }
 
