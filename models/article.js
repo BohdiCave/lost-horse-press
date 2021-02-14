@@ -20,11 +20,9 @@ module.exports = (sequelize, DataTypes) => {
     // post_author: {type: DataTypes.BIGINT.UNSIGNED, allowNull: false, defaultValue: 0}
   }, {timestamps: false});
 
-  // Article.associate = models => {
-  //   Article.belongsTo(models.User, {
-  //       as: "text_author"
-  //   });
-  // }
+  Article.associate = models => {
+    Article.belongsTo(models.User);
+  }
 
   return Article;
 }

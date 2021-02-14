@@ -82,7 +82,7 @@ module.exports = {
                 }
                 });
           });
-    },
+    }
     // update: function(req, res) {
     //     db.User
     //     .findOneAndUpdate({ _id: req.params.id }, req.body)
