@@ -16,6 +16,7 @@ module.exports = {
   },
   create: function(req, res) {
     const {prodId, prodQty} = req.body;
+    const userId = req.params.id;
     let itemPrice, itemTitle, itemDesc, itemCat;
     db.Book
       .findOne({where: {id: prodId}})
@@ -24,10 +25,11 @@ module.exports = {
         itemTitle = book.title;
         itemDesc = book.author;
         itemCat = book.genre;
+        return(itemPrice, itemTitle, itemDesc, itemCat);
       })
       .then(
         db.Cart
-          .findOne({where: {userId: req.params.id}})
+          .findOne({where: {userId: userId}})
           .then(cart => {
             db.Item
               .findOne({where: {title: itemTitle}})
@@ -78,7 +80,7 @@ module.exports = {
                   .catch(err => res.status(422).json(err));
               })
               .catch(err => res.status(422).json(err));
-            res.status(500).send("Something went wrong", res.json(err));
+            return res.json(err);
           })
       ).catch(err => res.status(404).send("Item not found!", err));          
   },
@@ -86,13 +88,14 @@ module.exports = {
     const prodId = req.params.itemId;
     const userId = req.params.userId;
     db.Cart
-      .findOne({where: { userId: req.params.userId}})
+      .findOne({where: { userId: userId}})
       .then(cart => {
         db.Item
-          .findOne({where: { id: itemId }})
+          .findOne({where: { id: prodId }})
           .then(item => {
             cart.total -= item.price*item.qty;
             cart.total_qty -= item.qty;
+            return item;
           })
           .then(item => item.destroy())
           .then(item => res.json(item))
@@ -101,5 +104,3 @@ module.exports = {
       .catch(err => res.json(err));
   }
 };
-
-itemId: req.params.itemId

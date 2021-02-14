@@ -25,9 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Book.associate = models => {
-    Book.belongsTo(models.Item, {
-      as: "product"
-    });
+    Book.hasMany(models.Item);
   }
   // Book.associate = models => {
   //   Book.hasOne(models.Cover, {foreignKey: {allowNull: false}, onDelete: "cascade" });

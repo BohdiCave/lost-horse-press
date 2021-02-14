@@ -11,30 +11,10 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   User.associate = models => { 
-    User.hasOne(models.Cart, {
-      foreignKey: {
-        allowNull: false
-      },
-      onDelete: "cascade"
-    });
-    User.hasMany(models.Order, {
-      foreignKey: {
-        allowNull: false
-      },
-      onDelete: "restrict"
-    });
-    User.hasMany(models.Post, {
-      foreignKey: {
-        allowNull: false
-      }, 
-      onDelete: "cascade" 
-    });
-    User.hasMany(models.Article, {
-      foreignKey: {
-        allowNull: false
-      }, 
-      onDelete: "restrict" 
-    }); 
+    User.hasOne(models.Cart, { foreignKey: { allowNull: false }, onDelete: "cascade" });
+    User.hasMany(models.Order, { onDelete: "restrict" });
+    User.hasMany(models.Post, { onDelete: "cascade" });
+    User.hasMany(models.Article, { onDelete: "restrict" }); 
   };
 
   return User;

@@ -7,12 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Cart.associate = models => {
-    Cart.hasMany(models.Item, {
-        foreignKey: {
-            allowNull: false
-        }
-    });
-    Cart.belongsTo(models.User);
+    Cart.hasMany(models.Item, { onDelete: "restrict" });
+    Cart.belongsTo(models.User, { foreignKey: { allowNull: false }});
   };
 
   return Cart;

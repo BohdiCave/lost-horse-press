@@ -13,12 +13,9 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Item.associate = models => {
-    Item.belongsTo(models.Cart);
-    Item.hasOne(models.Book, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    Item.belongsTo(models.Cart, { foreignKey: { allowNull: false } });
+    Item.belongsTo(models.Order, { foreignKey: { allowNull: false } });
+    Item.belongsTo(models.Book, { foreignKey: { allowNull: false } });
   };
 
   return Item;

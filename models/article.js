@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {timestamps: false});
 
   Article.associate = models => {
-    Article.belongsTo(models.User);
+    Article.belongsTo(models.User, {foreignKey: {allowNull: false}});
   }
 
   return Article;
