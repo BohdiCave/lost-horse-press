@@ -1,7 +1,7 @@
 const db = require("../models");
 const config = require("../config/keys");
 const item = require("../models/item");
-const stripe = require("stripe")(config.get("StripeAPIKey"));
+const stripe = require("stripe")(config.StripeAPIKey);
 
 // Defining methods for the postsController
 module.exports = {

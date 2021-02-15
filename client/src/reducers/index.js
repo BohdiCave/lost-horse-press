@@ -5,7 +5,8 @@ import postReducer from "./postReducer";
 import itemReducer from "./itemReducer";
 import cartReducer from "./cartReducer";
 import orderReducer from "./orderReducer";
-import bookReducer from "./bookReducer";
+import booksReducer from "./booksReducer";
+import articleReducer from "./articleReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   items: itemReducer,
   cart: cartReducer,
   orders: orderReducer,
-  books: bookReducer
+  books: booksReducer,
+  articles: articleReducer
 });

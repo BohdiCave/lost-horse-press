@@ -1,14 +1,7 @@
-import React, {useCallback} from 'react';
-import $ from 'jquery';
-import Foundation from 'foundation-sites';
+import React from 'react';
+import {FaShoppingCart} from "react-icons/fa";
 
-export default function OffCanvasWrapper({name}) {
-
-    const foundationTopNav = useCallback(node => {
-        if ( node !== null ) {
-            $(node).foundation();  // Initiate Foundation code at here.
-        }
-    });
+export default function Card({name}) {
 
     return(
         <div className="card" id={name}>
@@ -30,6 +23,9 @@ export default function OffCanvasWrapper({name}) {
                 : name==="two" ? <p>by Svetlana Lavochkina</p>
                 : name==="three" ? <p>by Polly Buckhingham</p>
                 : name==="four" ? <p>by Roy Bentley</p> : "error"}
+            </div>
+            <div className="card-section order">
+                <span><FaShoppingCart />Add to Cart</span>
             </div>
         </div>
     );

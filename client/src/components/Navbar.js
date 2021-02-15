@@ -1,4 +1,6 @@
 import React, {useCallback} from 'react';
+import {Link} from 'react-router-dom';
+import {FaShoppingCart} from 'react-icons/fa';
 import SiteMapBtn from "./SiteMapBtn";
 import SearchForm from "./SearchForm";
 import $ from 'jquery';
@@ -45,6 +47,7 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="top-bar-right">
+          <Link to="/order"><FaShoppingCart /></Link>
           <SiteMapBtn />
           <SearchForm />
         </div>

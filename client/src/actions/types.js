@@ -7,6 +7,13 @@ export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const GET_POSTS = "GET_POSTS";
 export const DELETE_POST = "DELETE_POST";
 export const NEW_POST = "NEW_POST";
+// article actions
+export const ARTICLES_LOADING = "ARTICLES_LOADING";
+export const GET_ARTICLES = "GET_ARTICLES";
+export const ADD_ARTICLE = "ADD_ARTICLE";
+export const GET_ARTICLE = "GET_ARTICLE";
+export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
+export const DELETE_ARTICLE = "DELETE_ARTICLE";
 // book actions
 export const GET_BOOKS = "GET_BOOKS";
 export const DELETE_BOOK = "DELETE_BOOK";

@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     User.hasOne(models.Cart, { foreignKey: { allowNull: false }, onDelete: "cascade" });
     User.hasMany(models.Order, { onDelete: "restrict" });
     User.hasMany(models.Post, { onDelete: "cascade" });
-    User.hasMany(models.Article, { onDelete: "restrict" }); 
+    // User.hasMany(models.Article, { onDelete: "restrict" }); 
   };
 
   return User;

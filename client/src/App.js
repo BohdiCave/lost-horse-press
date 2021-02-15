@@ -15,6 +15,7 @@ import Books from "./components/pages/Books";
 import NoMatch from "./components/pages/NoMatch";
 import Landing from "./components/pages/Landing";
 import About from "./components/pages/About";
+import Order from "./components/pages/Order";
 // auth components
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -41,8 +42,6 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
-// import Navbar from "./components/Navbar";
-// import './App.css';
 
 export default function App() {
   return (
@@ -51,7 +50,8 @@ export default function App() {
         <Switch>
           <Route exact path="/"> <Landing /> </Route>
           <Route exact path="/home"> <Home /> </Route>
-          <Route exact path="/about"> <About/></Route>
+          <Route exact path="/about"> <About/> </Route>
+          <Route exact path="/order"> <Order/> </Route>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />

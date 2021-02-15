@@ -2,12 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC');
 /* General */
 * {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
 }
 body {
-    background-color: rgb(245, 222, 179);
+    background-color: rgb(253, 251, 245);
 }
 main {
     display: flex;

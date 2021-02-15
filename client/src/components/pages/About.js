@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import API from "../../utils/API";
+import React, {Component} from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getArticles } from "../../actions/articleActions";
 // components
 import Navbar from '../Navbar';
 import MainGrid from '../MainGrid';
@@ -7,26 +9,31 @@ import Footer from '../Footer';
 // Foundation and other styles
 import '../styles/about.css';
 
-function About() {
+class About extends Component {
     
-    const [articles, setArticles] = useState([]);
+    componentDidMount() {
+        this.props.getArticles();
+    };
 
-    useEffect(() => {
-        API.getArticles()
-           .then(res => {
-            console.log(res.data); 
-            setArticles(res.data)
-            })
-           .catch(err => console.log(err));
-    }, [])
-
-    return(
-        <>
-        <Navbar/>
-        <MainGrid articles={articles}/>
-        <Footer/>
-        </>
-    );
+    render() {
+        return(
+            <>
+            <Navbar/>
+            <MainGrid articles={this.props.articles}/>
+            <Footer/>
+            </>
+        );
+    }
 }
 
-export default About;
+About.propTypes = {
+    getArticles: PropTypes.func.isRequired,
+    articles: PropTypes.array.isRequired
+  };
+    
+  const mapStateToProps = state => ({ 
+    articles: state.articles.items,
+    errors: state.errors
+  });
+    
+  export default connect( mapStateToProps, { getArticles } )(About);

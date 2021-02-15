@@ -8,7 +8,6 @@ const passport = require('passport');
 // database 
 let db;
 if (process.env.JAWSDB_URL) {
-  console.log(process.env.JAWSDB_URL);
   db = new Sequelize(process.env.JAWSDB_URL);
 } else {
   db = require('./models')

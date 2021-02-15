@@ -1,0 +1,97 @@
+/* Styles for the ORDER page*/
+/* Container DIV */
+div#order {
+    margin: 20px 50px;
+    padding: 0px 20px 20px;
+    width: 50%;
+    background-color: cadetblue;
+    color: rgb(253, 251, 245);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px black;
+}
+div#order a {
+    color: navy;
+    text-shadow: none;
+    font-weight: bold;
+} 
+div#order span {
+    text-shadow: none;
+    font-weight: bold;
+}
+.red-text {
+    color: darkred;
+}
+div#pmtTypes span.green-text {
+    color: darkgreen;
+    text-shadow:none;
+}
+
+/* Row styles */
+div.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+div#shopCart .col {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0px;
+}
+div#shopCart p {
+    margin: 30px 0px;
+}
+div#shopCart h3 {
+    font-size: 36px;
+}
+div#pmtTypes h4 {
+    font-size: 32px;
+}
+div#shopCart h3, div#pmtTypes h4 {
+    color: black; 
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(253, 251, 245, 0.7);
+    box-shadow: 1px 1px 2px 1px black;
+    text-shadow: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+}
+div#pmtTypes ul {
+    list-style-type: none;
+}
+div#pmtTypes li {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 20px;
+    color: black;
+    text-shadow: none;
+    margin: 10px 30px 10px 15px;
+    border-bottom: 1px dotted black;
+}
+div#pmtTypes li:last-of-type {
+    border-bottom: none;
+}
+div#pmtTypes span {
+    text-shadow: 1px 1px 2px black; 
+}
+table tbody {
+    color: black;
+    background: cadetblue;
+    border: 0;
+}
+th span {
+    border-bottom: 3px dotted black;
+}
+td, th {
+    background: cadetblue;
+    font-weight: bold;
+}
+#dist th, #mail th {
+    text-align: right;
+    vertical-align: top;
+}
+address {
+    font-weight: bold;
+}
