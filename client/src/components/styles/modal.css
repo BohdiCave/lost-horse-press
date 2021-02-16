@@ -103,6 +103,12 @@ img#side-logo:hover {
 #aboutMenu .icon2 { top: 146px; left: 865px;}
 #aboutMenu .icon3 { top: 195px; left: 865px;}    
 
+/* Shopping Cart modal */
+#cart-icon {
+    color: white;
+    font-size: 50px;
+}
+
 @media screen and (max-width: 470px) {
     .modal-main {
         flex-direction: column;

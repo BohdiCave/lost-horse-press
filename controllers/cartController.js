@@ -88,7 +88,7 @@ module.exports = {
     const prodId = req.params.itemId;
     const userId = req.params.userId;
     db.Cart
-      .findOne({where: { userId: userId}})
+      .findOne({where: { userId: userId }})
       .then(cart => {
         db.Item
           .findOne({where: { id: prodId }})

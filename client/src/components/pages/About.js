@@ -1,6 +1,5 @@
-import React, {Component} from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, {useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
 import { getArticles } from "../../actions/articleActions";
 // components
 import Navbar from '../Navbar';
@@ -9,31 +8,21 @@ import Footer from '../Footer';
 // Foundation and other styles
 import '../styles/about.css';
 
-class About extends Component {
+export default function About() {
     
-    componentDidMount() {
-        this.props.getArticles();
-    };
+    const dispatch = useDispatch();
 
-    render() {
-        return(
-            <>
-            <Navbar/>
-            <MainGrid articles={this.props.articles}/>
-            <Footer/>
-            </>
-        );
-    }
+    useEffect(() => {
+        dispatch(getArticles());
+    },[])
+
+    const articles = useSelector(state => state.articles.items);
+    
+    return(
+      <>
+        <Navbar />
+        <MainGrid articles={articles} />
+        <Footer />
+      </>
+    );
 }
-
-About.propTypes = {
-    getArticles: PropTypes.func.isRequired,
-    articles: PropTypes.array.isRequired
-  };
-    
-  const mapStateToProps = state => ({ 
-    articles: state.articles.items,
-    errors: state.errors
-  });
-    
-  export default connect( mapStateToProps, { getArticles } )(About);

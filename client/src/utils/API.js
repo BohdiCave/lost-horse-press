@@ -4,9 +4,9 @@ export default {
   // BOOK-RELATED ROUTES
   //
   // Get all the books in the catalog
-  getBooks: () => {
-    return axios.get("/api/catalog");
-  },
+  // getBooks: () => {
+  //   return axios.get("/api/catalog");
+  // },
   // Create and save a new book to the catalog
   saveBook: (bookData) => {
     return axios.post("/api/catalog", bookData);

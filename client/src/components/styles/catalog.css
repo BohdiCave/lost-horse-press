@@ -30,6 +30,36 @@ table#cat tbody tr:nth-child(2n) {
 table#cat th.cover {
     width: 30%; 
 }
+table#cat .qty label {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(141, 21, 21);
+    padding: 10px;
+    text-align: center;
+}
+table#cat #quantity {
+    width: 40px;
+    margin-top: 10px;
+    border: 1px dotted black;
+    font-size: 20px;
+}
+table#cat th.cover button {
+    cursor: pointer;
+    background: transparent;
+    width: 160px;
+    margin-top: 15px;
+    padding: 0;
+}
+button span.shop {
+    font-size: 24px;
+    font-weight: bold;
+}
+table#cat th.cover .qty {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
 table#cat img.cover { 
     width: 200px; 
 }
@@ -85,6 +115,9 @@ table#cat p, table#cat h3 {
     img.cover {
         min-width: 200px;
         margin: 20px;
+    }
+    span.shop {
+        color: darkred;
     }
     table#cat h3#title {
         margin: 0px 30px;

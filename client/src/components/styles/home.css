@@ -25,11 +25,10 @@ div.card-section {
     justify-content: center;
 }
 div.card-section.title {
-    height: 80px;
-    padding-bottom: 0;
+    height: 150px;
 }
 div.card-section.desc {
-    height: 50px;
+    height: 100px;
     padding: 20px;
 }
 div.card-section.desc p { 
@@ -42,8 +41,23 @@ div.card-section.book-cover{
     height: 300px;
     padding: 0;
 }
-div.card-section.book-cover img.cover { width: 200px; }
-
+div.card-section.book-cover img.cover { 
+    width: 200px; 
+}
+div.card-section.order {
+    padding: 10px;
+}
+div.card-section.order button {
+    cursor: pointer;
+    font-weight: bold;
+}
+.shop {
+    color: darkred;
+}
+.cart {
+    margin-right: 10px;
+    vertical-align: middle;
+}
 
 @media screen and (max-width: 400px) {
     .grid-x { flex-direction: column !important; }

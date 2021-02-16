@@ -20,14 +20,14 @@ export default function(state = initialState, action) {
         };
       case DELETE_BOOK:
         return {
-            ...state,
-            item: action.payload
-          };
+          ...state,
+          item: action.payload
+        };
       case UPDATE_BOOK:
         return {
-            ...state,
-            item: action.payload
-          };
+          ...state,
+          item: action.payload
+        };
       case BOOKS_LOADING:
         return {
           ...state,

@@ -1,7 +1,7 @@
 import {CART_LOADING, GET_CART, ADD_TO_CART, DELETE_FROM_CART} from "../actions/types";
 
 const initialState = {
-    item: {},
+    items: [],
     loading: false
 };
 
@@ -10,18 +10,18 @@ export default function(state = initialState, action) {
       case GET_CART:
         return {
           ...state,
-          item: action.payload
+          items: action.payload
         };
       case ADD_TO_CART:
         return {
           ...state,
-          item: action.payload
+          items: action.payload
         };
       case DELETE_FROM_CART:
         return {
-            ...state,
-            item: action.payload
-          };
+          ...state,
+          items: action.payload
+        };
       case CART_LOADING:
         return {
           ...state,

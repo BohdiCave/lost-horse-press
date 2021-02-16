@@ -47,7 +47,7 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="top-bar-right">
-          <Link to="/order"><FaShoppingCart /></Link>
+          <Link to="/order"><FaShoppingCart id="shop" /></Link>
           <SiteMapBtn />
           <SearchForm />
         </div>

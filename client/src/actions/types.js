@@ -1,5 +1,7 @@
 // error actions
 export const GET_ERRORS = "GET_ERRORS";
+// location actions
+export const GET_ADDRESS = "GET_ADDRESS";
 // user auth actions
 export const USER_LOADING = "USER_LOADING";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
@@ -16,6 +18,7 @@ export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
 export const DELETE_ARTICLE = "DELETE_ARTICLE";
 // book actions
 export const GET_BOOKS = "GET_BOOKS";
+export const GET_BOOK = "GET_BOOK";
 export const DELETE_BOOK = "DELETE_BOOK";
 export const ADD_BOOK = "ADD_BOOK";
 export const UPDATE_BOOK = "UPDATE_BOOK";

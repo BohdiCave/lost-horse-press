@@ -1,25 +1,28 @@
-import React, {Component} from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getBooks, delBook } from "../../actions/bookActions";
+import React, {useEffect} from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getBooks } from "../../actions/bookActions";
 // components
 import Navbar from '../Navbar';
 import MainGrid from '../MainGrid';
 import Footer from '../Footer';
 import '../styles/catalog.css';
 
-class Books extends Component {
+export default function Books() {
+  
+  const dispatch = useDispatch();
 
-  componentDidMount() {
-    this.props.getBooks();
-  };
+  useEffect(() => {
+    dispatch(getBooks()); 
+  },[]);
 
-  delBook = (e, id) => {
-    id= e.target.getAttribute("id");
-    this.props.delBook(id);
+  const books = useSelector(state => state.books.items);
+
+  // delBook = (e, id) => {
+  //   id = e.target.getAttribute("id");
+  //   props.delBook(id);
   // Deletes a book from the database with a given id, then reloads books from the db
   // .then(res => loadBooks())
-  };
+  // };
 
   // Handles updating component state when the user types into the input field
   // function handleInputChange(event) {
@@ -41,27 +44,12 @@ class Books extends Component {
   //       .catch(err => console.log(err));
   //   }
   // };
-  render() {
-    return (
-      <>
+  return (
+    <>
       <Navbar />
-      <MainGrid books={this.props.books} />
+      <MainGrid books={books} />
       <Footer />
-      </>
-    );
-  };
-
+    </>
+  );
 }
-
-Books.propTypes = {
-  getBooks: PropTypes.func.isRequired,
-  delBook: PropTypes.func.isRequired,
-  books: PropTypes.array.isRequired
-};
   
-const mapStateToProps = state => ({ 
-  books: state.books.items,
-  errors: state.errors
-});
-  
-export default connect( mapStateToProps, { getBooks, delBook } )(Books);

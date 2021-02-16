@@ -1,34 +1,24 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
 import Modal from './Modal.js';
 
-class SiteMapBtn extends Component {
-  constructor() {
-    super();
-    this.state = {
-      show: false
-    };
-    this.showModal = this.showModal.bind(this);
-    this.hideModal = this.hideModal.bind(this);
-  }
+export default function SiteMapBtn() {
+  
+  const [show, setShow] = useState(false)
 
-  showModal = () => {
-    this.setState({ show: true });
+  const showModal = () => {
+    setShow({ show: true });
   };
 
-  hideModal = () => {
-    this.setState({ show: false });
+  const hideModal = () => {
+    setShow({ show: false });
   };
 
-  render() {
-    return (
-      <div>
-        <Modal show={this.state.show} handleClose={this.hideModal}/>
-        <button type="button" className="button" id="site-map" onClick={this.showModal}>
-          SITE MAP
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Modal show={show} handleClose={hideModal}/>
+      <button type="button" className="button" id="site-map" onClick={showModal}>
+        SITE MAP
+      </button>
+    </div>
+  );
 }
-
-export default SiteMapBtn;

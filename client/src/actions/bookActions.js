@@ -1,16 +1,28 @@
 import axios from 'axios';
-import {GET_BOOKS, DELETE_BOOK, UPDATE_BOOK, ADD_BOOK, BOOKS_LOADING, GET_ERRORS} from './types';
+import {GET_BOOKS, GET_BOOK, DELETE_BOOK, UPDATE_BOOK, ADD_BOOK, BOOKS_LOADING, GET_ERRORS} from './types';
 
 export const getBooks = () => dispatch => {
     dispatch(setBooksLoading());
     axios.get("/api/catalog")
          .then(res => dispatch({
-             type: GET_BOOKS,
-             payload: res.data
+            type: GET_BOOKS,
+            payload: res.data
          }))
          .catch(err => dispatch({
-             type: GET_ERRORS,
-             payload: err.response.data
+            type: GET_ERRORS,
+            payload: err.response.data
+         }));
+};
+
+export const getBook = (id) => dispatch => {
+    axios.get(`/api/catalog/${id}`)
+         .then(res => dispatch({
+            type: GET_BOOK,
+            payload: res.data
+         }))
+         .catch(err => dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
          }));
 };
 

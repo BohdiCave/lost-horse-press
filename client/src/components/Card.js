@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaShoppingCart} from "react-icons/fa";
+import AddItemBtn from "./AddItemBtn";
 
 export default function Card({name}) {
 
@@ -25,7 +25,7 @@ export default function Card({name}) {
                 : name==="four" ? <p>by Roy Bentley</p> : "error"}
             </div>
             <div className="card-section order">
-                <span><FaShoppingCart />Add to Cart</span>
+                <AddItemBtn />
             </div>
         </div>
     );
