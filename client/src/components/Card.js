@@ -13,7 +13,7 @@ export default function Card({name}) {
                 : "error"}
             </div>
             <div className="card-section book-cover">
-                {name==="one" ? <img src="/assets/images/mountain-flower.jpg" className="cover featured" alt="Book Cover - Selected Poems of Mykola Vorobiov" /> 
+                {name==="one" ? <img src="/assets/images/covers/54.jpg" className="cover featured" alt="Book Cover - Selected Poems of Mykola Vorobiov" /> 
                 : name==="two" ? <img src="/assets/images/lavochkina_carbon-song-of-crafts.webp" className="cover featured" alt="Book Cover - Carbon, Song of Crafts by Svetlana Lavochkina"/>
                 : name==="three" ? <img src="/assets/images/the-river-people.jpg" className="cover featured" alt="Book Cover - The River People by Polly Buckingham"/>
                 : name==="four" ? <img src="/assets/images/my-mothers-red-ford.jpg" className="cover featured" alt="Book Cover - My Mother's Red Ford by Roy Bentley"/> : "error"}

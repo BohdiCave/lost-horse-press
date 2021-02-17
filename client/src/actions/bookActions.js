@@ -10,7 +10,7 @@ export const getBooks = () => dispatch => {
          }))
          .catch(err => dispatch({
             type: GET_ERRORS,
-            payload: err.response.data
+            payload: err
          }));
 };
 
@@ -22,7 +22,7 @@ export const getBook = (id) => dispatch => {
          }))
          .catch(err => dispatch({
             type: GET_ERRORS,
-            payload: err.response.data
+            payload: err
          }));
 };
 
@@ -34,7 +34,7 @@ export const addBook = (book) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 
@@ -46,7 +46,7 @@ export const delBook = (id) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 
@@ -58,7 +58,7 @@ export const updBook = (id, book) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 

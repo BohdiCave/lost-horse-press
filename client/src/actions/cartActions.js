@@ -10,19 +10,21 @@ export const getCart = (id) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 
 export const addToCart = (id, prodId, prodQty) => dispatch => {
     axios.post(`/api/cart/${id}`, {prodId, prodQty})
-         .then(res => dispatch({
-             type: ADD_TO_CART,
-             payload: res.data
-         }))
+         .then(res => {
+            dispatch({
+                type: ADD_TO_CART,
+                payload: res.data
+            })
+         })
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 
@@ -34,7 +36,7 @@ export const delFromCart = (userId, itemId) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 

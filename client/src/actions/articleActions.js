@@ -27,7 +27,7 @@ export const getArticle = (id) => dispatch => {
       }))
       .catch(err => dispatch({
           type: GET_ERRORS,
-          payload: err.response.data
+          payload: err
       }));
 };
 
@@ -41,7 +41,7 @@ export const addArticle = (articleData) => dispatch => {
     }))
     .catch(err => dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
+        payload: err
     }));
 };
 
@@ -55,7 +55,7 @@ export const updArticle = (id, article) => dispatch => {
       }))
       .catch(err => dispatch({
           type: GET_ERRORS,
-          payload: err.response.data
+          payload: err
       }));
 };
 
@@ -69,7 +69,7 @@ export const delArticle = (id) => dispatch => {
       }))
       .catch(err => dispatch({
             type: GET_ERRORS,
-            payload: err.response.data
+            payload: err
       }));
 };
 

@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => { 
   const Cart = sequelize.define('Cart', {
-    total_qty: {type: DataTypes.INTEGER, allowNull: false, defaultValue: 1},
+    total_qty: {type: DataTypes.INTEGER, allowNull: false, defaultValue: 0},
     total: {type: DataTypes.DECIMAL, allowNull: false, defaultValue: 0}
   }, {
     timestamps: false

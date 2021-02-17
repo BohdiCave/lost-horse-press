@@ -12,6 +12,7 @@ import './app.css';
 // components - pages
 import Home from "./components/pages/Home";
 import Books from "./components/pages/Books";
+import Series from "./components/pages/Series";
 import NoMatch from "./components/pages/NoMatch";
 import Landing from "./components/pages/Landing";
 import About from "./components/pages/About";
@@ -56,6 +57,7 @@ export default function App() {
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path={["/books", "/catalog"]}> <Books /> </Route>
+          <Route exact path="/series"> <Series/></Route>
           {/* <Route exact path="/books/:id"> <Detail /> </Route> */}
           <Route> <NoMatch /> </Route>
         </Switch>

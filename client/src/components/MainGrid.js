@@ -6,30 +6,59 @@ import Card from './Card';
 export default function MainGrid(props) {
 
   const address = useLocation().pathname;
+  let books, articles;
+  if (address === "/catalog" || address==="/series") {
+    books = props.books;
+  } else if (address === "/about") {
+    articles = props.articles;
+  }
 
   return(
     <main>
-      {address ==="/catalog" ? (
+      {(address ==="/catalog" || address==="/series") ? (
         <div className="cat-results">
-          <h2 id="cat-list">Catalog Listings</h2>
+          {address === "/catalog" && <h2 id="cat-list">Catalog Listings</h2>}
+          {address === "/series" && <h2 id="ua-series">Contemporary Ukrainian Poetry Series</h2> }
           <table id="cat"><tbody>
-          {props.books.map(book => { 
-            return(
-            <tr key={book.id} className="cat-item">
-              <th className="cover">
-                <img className="cover" src={`/assets/images/covers/${book.id}.jpg`}/>
-                <AddItemBtn id={book.id}/>
-              </th>
-              <td className="blurb">
-                <h3 id="title" dangerouslySetInnerHTML={{ __html: book.title }}></h3>
-                <h5 id="author">{book.author && (`by ${book.author}`)}</h5>
-                <h5 id="praise">{book.blurb && "Praise of the book:"}</h5>
-                <div id="blurb" dangerouslySetInnerHTML={{ __html: book.blurb}}></div>
-                <div id="blurbAuthor" dangerouslySetInnerHTML={{ __html: book.blurb_author}}></div>
-              </td>
-            </tr>
-            );
-          })}
+          {
+            address === "/series" 
+          ? 
+            (books.filter(book => book.genre==="contemporary Ukrainian poetry").map(book => {
+              return(
+              <tr key={book.id} className="cat-item">
+                <th className="cover">
+                  <img className="cover" src={`/assets/images/covers/${book.id}.jpg`}/>
+                  <AddItemBtn id={book.id}/>
+                </th>
+                <td className="blurb">
+                  <h3 id="title" dangerouslySetInnerHTML={{ __html: book.title }}></h3>
+                  <h5 id="author" dangerouslySetInnerHTML={{ __html: `by ${book.author}`}}></h5>
+                  <h5 id="praise">{book.blurb && "Praise of the book:"}</h5>
+                  <div id="blurb" dangerouslySetInnerHTML={{ __html: book.blurb}}></div>
+                  <div id="blurbAuthor" dangerouslySetInnerHTML={{ __html: book.blurb_author}}></div>
+                </td>
+              </tr>
+              );
+            }))
+          :
+            (books.map(book => { 
+              return(
+              <tr key={book.id} className="cat-item">
+                <th className="cover">
+                  <img className="cover" src={`/assets/images/covers/${book.id}.jpg`}/>
+                  <AddItemBtn id={book.id}/>
+                </th>
+                <td className="blurb">
+                  <h3 id="title" dangerouslySetInnerHTML={{ __html: book.title }}></h3>
+                  <h5 id="author" dangerouslySetInnerHTML={{ __html: `by ${book.author}`}}></h5>
+                  <h5 id="praise">{book.blurb && "Praise of the book:"}</h5>
+                  <div id="blurb" dangerouslySetInnerHTML={{ __html: book.blurb}}></div>
+                  <div id="blurbAuthor" dangerouslySetInnerHTML={{ __html: book.blurb_author}}></div>
+                </td>
+              </tr>
+              );
+            }))
+          }
           </tbody></table>
         </div>
       ) : address ==="/home" ? (
@@ -73,7 +102,7 @@ export default function MainGrid(props) {
             </div>
           </div>
           <div id="articles">
-          {props.articles.map(article => {
+          {articles.map(article => {
             return(
               <article key={article.article_name} id={article.article_name}>
                 <h2 className="artTitle">{article.article_title}</h2>

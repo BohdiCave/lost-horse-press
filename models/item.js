@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     title: {type: DataTypes.STRING, allowNull: false, defaultValue: ""},
     desc: {type: DataTypes.STRING, allowNull: false, defaultValue: ""},
     cat: {type: DataTypes.STRING, allowNull: false, defaultValue: ""},
-    price: {type: DataTypes.DECIMAL, allowNull: false},
+    price: {type: DataTypes.STRING, allowNull: false, defaultValue: ""},
     qty: {type: DataTypes.INTEGER, allowNull:false, defaultValue: 1},
     date_add: {type: DataTypes.DATE, allowNull: false, defaultValue: Sequelize.Now}
   }, {
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Item.associate = models => {
     Item.belongsTo(models.Cart, { foreignKey: { allowNull: false } });
-    Item.belongsTo(models.Order, { foreignKey: { allowNull: false } });
+    // Item.belongsTo(models.Order);
     Item.belongsTo(models.Book, { foreignKey: { allowNull: false } });
   };
 

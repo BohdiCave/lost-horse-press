@@ -10,7 +10,7 @@ export const getItems = () => dispatch => {
          }))
          .catch(err => dispatch({
             type: GET_ERRORS,
-            payload: err.response.data
+            payload: err
          }));
 };
 
@@ -22,7 +22,7 @@ export const addItem = (item) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 
@@ -34,7 +34,7 @@ export const delItem = (id) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 
@@ -46,10 +46,10 @@ export const updItem = (id, item) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }))
 };
 
 export const setItemsLoading = () => {
     return { type: ITEMS_LOADING };
-}
+};

@@ -10,7 +10,7 @@ export const getOrders = (id) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 
@@ -22,7 +22,7 @@ export const checkout = (id, source) => dispatch => {
          }))
          .catch(err => dispatch({
              type: GET_ERRORS,
-             payload: err.response.data
+             payload: err
          }));
 };
 

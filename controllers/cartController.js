@@ -15,74 +15,43 @@ module.exports = {
       .catch(err => res.status(500).json(err));
   },
   create: function(req, res) {
-    const {prodId, prodQty} = req.body;
+    const prodId = req.body.prodId.prodId;
+    const prodQty = req.body.prodQty;
     const userId = req.params.id;
-    let itemPrice, itemTitle, itemDesc, itemCat;
-    db.Book
-      .findOne({where: {id: prodId}})
-      .then(book => {
-        itemPrice = book.price_us;
-        itemTitle = book.title;
-        itemDesc = book.author;
-        itemCat = book.genre;
-        return(itemPrice, itemTitle, itemDesc, itemCat);
+    let price, title, desc, cat;
+    db.Cart.create({
+      total: 0, 
+      total_qty: 0,
+      UserId: userId
+    })
+    .then(cart => {
+      db.Book.findOne({where: {id: prodId}})
+        .then(book => {
+          price = book.price_us;
+          title = book.title;
+          desc = book.author;
+          cat = book.genre;
+        })
+      return (price, title, desc, cat, cart);
+    })
+    .then((price, title, desc, cat, cart) => { 
+      db.Item.create({
+        productId: prodId, 
+        title: title, 
+        desc: desc,
+        cat: cat,
+        qty: prodQty, 
+        price: price,
+        date_add: Date.now(),
       })
-      .then(
-        db.Cart
-          .findOne({where: {userId: userId}})
-          .then(cart => {
-            db.Item
-              .findOne({where: {title: itemTitle}})
-              .then(item => {
-                item.qty += prodQty;
-                cart.total_qty += prodQty;
-                cart.total += prodQty*itemPrice;
-                return res.status(201).json(cart);
-              })
-              .catch(err => {
-                db.Item
-                  .create({
-                    productId: prodId, 
-                    title: itemTitle, 
-                    desc: itemDesc,
-                    cat: itemCat,
-                    qty: prodQty, 
-                    price: itemPrice
-                  })
-                  .then(item => {
-                    res.json(item)
-                    cart.total_qty += prodQty;
-                    cart.total += prodQty*itemPrice;
-                    return res.status(201).json(cart);                        
-                  })
-                  .catch(err => res.status(422).json(err));
-                res.json(err);
-              });
-          })
-          .catch(err => {
-            db.Item
-              .create({
-                productId: prodId, 
-                title: itemTitle, 
-                desc: itemDesc,
-                cat: itemCat,
-                qty: prodQty, 
-                price: itemPrice
-              })
-              .then(item => {
-                db.Cart
-                  .create({
-                    total: itemPrice*prodQty, 
-                    total_qty: prodQty,
-                    itemId: item.id
-                  })
-                  .then(newCart => res.status(201).json(newCart))
-                  .catch(err => res.status(422).json(err));
-              })
-              .catch(err => res.status(422).json(err));
-            return res.json(err);
-          })
-      ).catch(err => res.status(404).send("Item not found!", err));          
+      .then(item => {
+        item.qty += prodQty;
+        cart.total_qty += prodQty;
+        cart.total += prodQty*itemPrice;
+        return res.send([cart, item]);
+      })
+    })
+    .catch(err => console.log(err));
   },
   destroy: function(req, res) {
     const prodId = req.params.itemId;

@@ -3,7 +3,7 @@ div.cat-results {
     width: 90%; 
     padding: 0px 50px; 
 }
-h2#cat-list {
+h2#cat-list, h2#ua-series {
     margin: 0px 0px 20px; 
     text-align: center;
     font-family: 'Amatic SC', cursive;
@@ -30,18 +30,28 @@ table#cat tbody tr:nth-child(2n) {
 table#cat th.cover {
     width: 30%; 
 }
+table#cat th.cover .qty {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
 table#cat .qty label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
     color: rgba(141, 21, 21);
-    padding: 10px;
     text-align: center;
 }
 table#cat #quantity {
     width: 40px;
-    margin-top: 10px;
+    margin-left: 5px;
+    margin-top: 15px;
     border: 1px dotted black;
     font-size: 20px;
+    background: transparent;
 }
 table#cat th.cover button {
     cursor: pointer;
@@ -54,14 +64,8 @@ button span.shop {
     font-size: 24px;
     font-weight: bold;
 }
-table#cat th.cover .qty {
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-    align-items: center;
-}
 table#cat img.cover { 
-    width: 200px; 
+    width: 230px; 
 }
 table#cat h3, 
 table#cat h5#praise { 
