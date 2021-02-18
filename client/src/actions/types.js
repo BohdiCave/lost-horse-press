@@ -16,6 +16,9 @@ export const ADD_ARTICLE = "ADD_ARTICLE";
 export const GET_ARTICLE = "GET_ARTICLE";
 export const UPDATE_ARTICLE = "UPDATE_ARTICLE";
 export const DELETE_ARTICLE = "DELETE_ARTICLE";
+// search actions
+export const GET_SEARCH_TERM = "GET_SEARCH_TERM";
+export const DO_SEARCH = "DO_SEARCH";
 // book actions
 export const GET_BOOKS = "GET_BOOKS";
 export const GET_BOOK = "GET_BOOK";

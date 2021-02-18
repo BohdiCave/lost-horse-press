@@ -1,62 +1,103 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useLocation } from 'react-router-dom';
+
 import AddItemBtn from "./AddItemBtn";
-import Card from './Card';
+import BookCard from './BookCard';
 
 export default function MainGrid(props) {
 
+  const [series, setSeries] = useState("lhp-series");
+
   const address = useLocation().pathname;
   let books, articles;
-  if (address === "/catalog" || address==="/series") {
+  if (address === "/catalog" || address==="/series" || address==="/search") {
     books = props.books;
   } else if (address === "/about") {
     articles = props.articles;
   }
-
+  
   return(
     <main>
-      {(address ==="/catalog" || address==="/series") ? (
+      {(address ==="/catalog" || address==="/series" || address==="/search") ? (
         <div className="cat-results">
           {address === "/catalog" && <h2 id="cat-list">Catalog Listings</h2>}
-          {address === "/series" && <h2 id="ua-series">Contemporary Ukrainian Poetry Series</h2> }
+          {address === "/search" && <h2 id="cat-list">Search Results</h2>}
+          {address === "/series" && 
+            <>
+            <h2 id={series}>
+              {series==="lhp-series" ? "LOST HORSE PRESS Series"
+              :series==="np-series" ? "New Poets Series"
+              :series==="ua-series" ? "Ukrainian Contemporary Poetry Series"
+              :series==="hr-series" ? "Human Rights Series" 
+              :series==="na-series" ? "Native American Series" : "Error"}
+            </h2> 
+            <section id="tabs">
+              <button type="button" onClick={()=> setSeries("lhp-series")} className="series-tab">
+                LHP Series Home
+              </button>
+              <button type="button" onClick={() => setSeries("np-series")} className="series-tab">
+                New Poets
+              </button>
+              <button type="button" onClick={() => setSeries("ua-series")} className="series-tab">
+                Ukrainian
+              </button>
+              <button type="button" onClick={() => setSeries("hr-series")} className="series-tab">
+                Human Rights
+              </button>
+              <button type="button" onClick={() => setSeries("na-series")} className="series-tab">
+                Native American
+              </button>
+            </section>
+            {series==="lhp-series" &&
+              <section id="series-summary">
+                <div id="new-poets">
+                  <h5>New Poets Series</h5>
+                  <p>Lost Horse Press is delighted to present the poetry series, <em>Lost Horse Press New Poets Series: New Poets | Short Book</em>, and its collaboration with poet Marvin Bell, who served as Series Editor.</p>
+                  <p>Between 2007 and 2011, Lost Horse Press published an annual volume of three new poets, each poet represented by twenty to thirty pages of poetry with a personal prose statement about his or her writing. Edited by Marvin Bell, the series features poets who are relatively unknown in literary circles but have strong individual voices and have shown a strong commitment to writing.</p>
+                  <p>This series was not intended to become a contest or a market. Neither Lost Horse Press nor the editor wished to receive uninvited inquiries or manuscripts. The goal was to foster the unconventional and unknown. The series introduces poetry that presses the boundaries of language—the sociopolitical, the surreal, the nutty, the extreme, good free verse, and good formalist verse. We preferred lively nonsense to earnest meaninglessness. We did not care for theory-based experiments. Manuscripts are made up of poems someone can hate and someone can love. Middle-of-the-road didn’t interest. Anyone who reads the work, whether they love or hate it, should immediately say to herself, <em>“Well, this is different.”</em></p>
+                </div>
+                <div id="ukrainian">
+                  <h5>Ukrainian Contemporary Poetry Series</h5>
+                  <p>In this series, Lost Horse Press introduces readers to a scope of contemporary Ukrainian poets and poetry through English translation. Lost Horse Press publishes single-author volumes representing a diversity of Ukrainian poets, with particular attention to gender and place of origin, in dual-language editions with the Ukrainian original and English translation printed enface. At this time, we are only accepting manuscripts through solicitation.</p>
+                </div>
+                <div id="human-rights">
+                  <h5>Human Rights Series</h5>
+                  <p>In this series, Lost Horse Press publishes poetry anthologies focusing on some specific aspect of human rights: the Israeli-Palestinian conflict, women's rights, women in the workplace, or global human rights (torture, migration, wars, imprisonment, violence against women and LGBT, and more...).</p>
+                </div>
+                <div id="native-american">
+                  <h5>Native American Series</h5>
+                  <p>This unique series, entitled <em>Regenerations: Indigenous Poetry Series</em>, edited by Hunkpapa Sioux poet Tiffany Midge, and published by Christine Holbert of the Lost Horse Press, presents inspiring and thought-provoking Native American voices in their original indigenous languages, providing an artistic, cultural and linguistic gateway towards language revitalization efforts in the Americas.</p>
+                  <p>The series is currently accepting queries from emerging and established Indigenous poets who speak their tribal language or have resources to a tribal language speaker who can provide translation for their work. Please email queries to <em>losthorsepress@mindspring.com</em> or mail to: </p><address><p>Regenerations - Lost Horse Press  •  105 Lost Horse Lane  •  Sandpoint, Idaho 83864</p></address>
+                  <p>According to the organization <em>Heart of the Earth</em> — the national leader in Native language renaissance — advocating for realization of the Native American Languages Act, “there are approximately 225 Native American languages still spoken in the United States, 60 in Canada, and 125 in Central America. In South America, the number of Indigenous languages numbers in the range of 300 to 400. The majority of these languages are endangered or threatened. If these languages go silent, all the thousands of years of human knowledge — pharmaceutical plants, ceremonial knowledge, astronomical knowledge, cultural history, interpretation of treaties — this knowledge will be lost. It is like the burning of the Library at Alexandria taking place hundreds of times over.”</p>
+                </div>
+              </section>
+            }
+            </>
+          }
           <table id="cat"><tbody>
           {
             address === "/series" 
           ? 
-            (books.filter(book => book.genre==="contemporary Ukrainian poetry").map(book => {
-              return(
-              <tr key={book.id} className="cat-item">
-                <th className="cover">
-                  <img className="cover" src={`/assets/images/covers/${book.id}.jpg`}/>
-                  <AddItemBtn id={book.id}/>
-                </th>
-                <td className="blurb">
-                  <h3 id="title" dangerouslySetInnerHTML={{ __html: book.title }}></h3>
-                  <h5 id="author" dangerouslySetInnerHTML={{ __html: `by ${book.author}`}}></h5>
-                  <h5 id="praise">{book.blurb && "Praise of the book:"}</h5>
-                  <div id="blurb" dangerouslySetInnerHTML={{ __html: book.blurb}}></div>
-                  <div id="blurbAuthor" dangerouslySetInnerHTML={{ __html: book.blurb_author}}></div>
-                </td>
-              </tr>
-              );
+            (books.filter(book => book.genre===series).map(book => {
+              return <BookCard 
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                author={book.author}
+                blurb={book.blurb}
+                blurb_author={book.blurb_author}
+              />
             }))
           :
             (books.map(book => { 
-              return(
-              <tr key={book.id} className="cat-item">
-                <th className="cover">
-                  <img className="cover" src={`/assets/images/covers/${book.id}.jpg`}/>
-                  <AddItemBtn id={book.id}/>
-                </th>
-                <td className="blurb">
-                  <h3 id="title" dangerouslySetInnerHTML={{ __html: book.title }}></h3>
-                  <h5 id="author" dangerouslySetInnerHTML={{ __html: `by ${book.author}`}}></h5>
-                  <h5 id="praise">{book.blurb && "Praise of the book:"}</h5>
-                  <div id="blurb" dangerouslySetInnerHTML={{ __html: book.blurb}}></div>
-                  <div id="blurbAuthor" dangerouslySetInnerHTML={{ __html: book.blurb_author}}></div>
-                </td>
-              </tr>
-              );
+              return <BookCard
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                author={book.author}
+                blurb={book.blurb}
+                blurb_author={book.blurb_author}
+              />
             }))
           }
           </tbody></table>
@@ -66,16 +107,16 @@ export default function MainGrid(props) {
           <h2 id="featured-list">Featured Books</h2>
           <div className="grid-x small-up-1 medium-up-4" id="responsive">
             <div className="cell">
-              <Card key="one" name="one"/>
+              <BookCard key="one" name="one"/>
             </div>
             <div className="cell">
-              <Card key="two" name="two"/>
+              <BookCard key="two" name="two"/>
             </div>
             <div className="cell">
-              <Card key="three" name="three"/>
+              <BookCard key="three" name="three"/>
             </div>
             <div className="cell">
-              <Card key="four" name="four"/>
+              <BookCard key="four" name="four"/>
             </div>
           </div>
         </div>

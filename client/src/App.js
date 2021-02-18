@@ -17,6 +17,7 @@ import NoMatch from "./components/pages/NoMatch";
 import Landing from "./components/pages/Landing";
 import About from "./components/pages/About";
 import Order from "./components/pages/Order";
+import Search from "./components/pages/Search";
 // auth components
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -58,6 +59,7 @@ export default function App() {
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path={["/books", "/catalog"]}> <Books /> </Route>
           <Route exact path="/series"> <Series/></Route>
+          <Route exact path="/search"> <Search/></Route>
           {/* <Route exact path="/books/:id"> <Detail /> </Route> */}
           <Route> <NoMatch /> </Route>
         </Switch>

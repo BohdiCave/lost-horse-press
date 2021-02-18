@@ -99,3 +99,28 @@ div#pmtTypes th {
 address {
     font-weight: bold;
 }
+
+@media screen and (max-width: 470px) {
+    div#order {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    div ul { margin: 0; }
+    div#shopCart h3 { font-size: 30px; }
+    div#pmtTypes h4 { font-size: 28px; padding: 5px 15px;}
+    div#pmtTypes li { margin-right: 10px; }
+    div#pmtTypes li:nth-of-type(4) {
+        display: flex;
+        flex-direction: column;
+    }
+    div#pmtTypes span { font-size: 28px; }
+    table tbody tr {
+        display: flex;
+        flex-direction: column;
+    }
+    #dist th, #mail th,
+    #dist td, #mail td {
+        text-align: center;
+    }
+}

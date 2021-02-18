@@ -1,10 +1,27 @@
 import React from 'react';
+import {useLocation} from "react-router-dom";
 import AddItemBtn from "./AddItemBtn";
 
-export default function Card({name}) {
-
+export default function BookCard({name, id, title, author, blurb, blurb_author }) {
+    const address = useLocation().pathname;
     return(
-        <div className="card" id={name}>
+        <>
+        {(address==="/catalog" || address==="/series") && 
+          <tr className="cat-item">
+            <th className="cover">
+                <img className="cover" src={`/assets/images/covers/${id}.jpg`}/>
+                <AddItemBtn id={id}/>
+            </th>
+            <td className="blurb">
+                <h3 id="title" dangerouslySetInnerHTML={{ __html: title }}></h3>
+                <h5 id="author" dangerouslySetInnerHTML={{ __html: `by ${author}`}}></h5>
+                <div id="blurb" dangerouslySetInnerHTML={{ __html: blurb}}></div>
+                <div id="blurbAuthor" dangerouslySetInnerHTML={{ __html: blurb_author}}></div>
+            </td>
+          </tr>
+        }
+        {address==="/home" &&
+          <div className="card" id={name}>
             <div className="card-section title">
                 {name==="one" ? <h5>Mountain and Flower - Selected Poems of Mykola Vorobiov</h5>
                 : name==="two" ? <h5>Carbon: Song of Crafts</h5>
@@ -27,6 +44,8 @@ export default function Card({name}) {
             <div className="card-section order">
                 <AddItemBtn />
             </div>
-        </div>
+          </div>
+        }
+        </>
     );
 }

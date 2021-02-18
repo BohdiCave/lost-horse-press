@@ -6,11 +6,11 @@ export default function SiteMapBtn() {
   const [show, setShow] = useState(false)
 
   const showModal = () => {
-    setShow({ show: true });
+    setShow(true);
   };
 
   const hideModal = () => {
-    setShow({ show: false });
+    setShow(false);
   };
 
   return (
