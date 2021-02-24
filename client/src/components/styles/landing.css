@@ -8,17 +8,32 @@
 body {
     background-color: rgb(253, 251, 245);
 }
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-/* Main content */
-div.container {
+div#wrapper {
     background: url('./idaho_mountains.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+div#wrapper main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: transparent;
+   
+}
+div#wrapper footer {
+    background: transparent; 
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+div#wrapper footer div.copyright {
+    background: rgba(253, 251, 245, 0.05);
+    padding: 0px 0px 13px;
+}
+div.copyright a {color: rgb(253, 251, 245);}
+/* Main content */
+div.container {
     width: 100%;
     min-height: 700px;
     display: flex;
@@ -117,6 +132,7 @@ button#news, button#about {
     height: 60px; 
     font-size: 36px;
     color: rgb(253, 251, 245);
+    cursor: pointer;
 }
 div.right div.menu-btn:hover { 
     background: rgba(245, 245, 245, 0.5);
@@ -143,6 +159,7 @@ button#reg-btn {
     font-size: 28px;
     line-height: 24px;
     transition: background-color .25s ease-out,color .25s ease-out;
+    cursor: pointer;
 }
 div.site-map-btn button#site-map:hover,
 button#login-btn:hover,

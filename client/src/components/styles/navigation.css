@@ -27,7 +27,6 @@ div#navigation {
 .top-bar .button:hover, .top-bar .button:focus { 
     background-color: rgb(141, 21, 21); 
 }
-
 #lhp-brand { 
     margin: 0px; 
     padding: 0px; 
@@ -88,18 +87,15 @@ form button#search-btn, button#site-map {
 }
 
 @media screen and (max-width: 470px) {
-    div.top-bar-left, div.top-bar-right, .dropdown.menu { 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center;
-    }
-    a#news, a#cat, a#about, a#subs { 
-        font-size: 28px; 
-        margin-top: 25px;
-        padding: 0px 25px;
-    }
-    .top-bar-right form {
-        flex-direction: column;
-        align-items: center;
-    }
+    #lhp-brand {display: none;}
+    ul.dropdown {justify-content: center; margin-bottom: 20px; }
+    div#navigation div.top-bar-right { flex-direction: column; align-items: center;}
+    #shop {margin-right: 5px; margin-top: 0px;}
+    .top-bar-right form { flex-direction: column; align-items: center; }
 } 
+@media screen and (max-width: 1024px) {
+    div#navigation { flex-direction: column; align-items: center; }
+    div.top-bar div.top-bar-left, div.top-bar div.top-bar-right { flex-direction: row; margin: 0; padding: 0; }
+    section#articles { margin-left: 50px; }
+    #lhp-brand { width: 100px;}
+}

@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { useLocation } from 'react-router-dom';
 
-import AddItemBtn from "./AddItemBtn";
 import BookCard from './BookCard';
 
 export default function MainGrid(props) {
@@ -10,7 +9,7 @@ export default function MainGrid(props) {
 
   const address = useLocation().pathname;
   let books, articles;
-  if (address === "/catalog" || address==="/series" || address==="/search") {
+  if (address === "/catalog" || address==="/series" || address==="/search" || address==="/home") {
     books = props.books;
   } else if (address === "/about") {
     articles = props.articles;
@@ -18,10 +17,13 @@ export default function MainGrid(props) {
   
   return(
     <main>
-      {(address ==="/catalog" || address==="/series" || address==="/search") ? (
+      {(address ==="/catalog" || address==="/series" 
+       || address==="/search" || address==="/home") 
+      ? (
         <div className="cat-results">
           {address === "/catalog" && <h2 id="cat-list">Catalog Listings</h2>}
           {address === "/search" && <h2 id="cat-list">Search Results</h2>}
+          {address === "/home" && <h2 id="featured-list">Featured Books</h2>}
           {address === "/series" && 
             <>
             <h2 id={series}>
@@ -88,7 +90,18 @@ export default function MainGrid(props) {
                 blurb_author={book.blurb_author}
               />
             }))
-          :
+          : address === "/home" 
+          ? (books.filter(book => book.rewrite==="featured").map(book => {
+              return <BookCard
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                author={book.author}
+                blurb={book.blurb}
+                blurb_author={book.blurb_author}
+              />
+            }))
+          : 
             (books.map(book => { 
               return <BookCard
                 key={book.id}
@@ -102,27 +115,15 @@ export default function MainGrid(props) {
           }
           </tbody></table>
         </div>
-      ) : address ==="/home" ? (
-        <div>
-          <h2 id="featured-list">Featured Books</h2>
-          <div className="grid-x small-up-1 medium-up-4" id="responsive">
-            <div className="cell">
-              <BookCard key="one" name="one"/>
-            </div>
-            <div className="cell">
-              <BookCard key="two" name="two"/>
-            </div>
-            <div className="cell">
-              <BookCard key="three" name="three"/>
-            </div>
-            <div className="cell">
-              <BookCard key="four" name="four"/>
-            </div>
-          </div>
-        </div>
       ) : address ==="/about" ? (
+      <div id="about-wrapper">
+        <h2 id="head-title">About LOST HORSE PRESS</h2>
         <div id="article-container">
-          <div id="images">
+          <section id="images">
+            <div id="about-mission">
+              <h2 className="artTitle">Mission Statement</h2>
+              <div id="mission">Established in 1998, Lost Horse Press — a nonprofit independent press — publishes poetry titles of high literary merit, and makes available other fine contemporary literature through cultural, educational and publishing programs and activities. The LOST HORSE PRESS <em>New Poets, Short Books Series</em>, edited by Marvin Bell, is dedicated to works — often ignored by conglomerate publishers — which are so much in danger of vanishing into obscurity in what has become the age of chain stores and mass appeal food, movies, art and books.</div>
+            </div>
             <div>
               <figure className="sideImg">
                 <img title="christine1" src="./assets/images/christine1.jpg" alt="" />
@@ -141,8 +142,25 @@ export default function MainGrid(props) {
                 <figcaption>During a LOST HORSE PRESS Conference</figcaption>
               </figure>
             </div>
-          </div>
-          <div id="articles">
+            <div id="about-contacts">
+              <h2 className="artTitle">Contacts</h2>
+              <div id="contacts">
+                <address>
+                  Lost Horse Press<br></br>
+                  105 Lost Horse Lane<br></br>
+                  Sandpoint, Idaho 83864<br></br>
+                </address>
+                <div>
+                  (208) 255-4410<br></br>
+                  (208) 255-1560 Fax<br></br>
+                  <a href="mailto:losthorsepress@mindspring.com">
+                    losthorsepress@mindspring.com
+                  </a><br></br>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="articles">
           {articles.map(article => {
             return(
               <article key={article.article_name} id={article.article_name}>
@@ -153,8 +171,9 @@ export default function MainGrid(props) {
               </article>
             );
           })}
-          </div>
+          </section>
         </div>
+      </div>
       ) : "Error"}
     </main>
   );

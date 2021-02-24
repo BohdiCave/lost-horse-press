@@ -1,3 +1,15 @@
+h2#head-title {
+    font-size: 60px;
+    font-family: inherit;
+    font-weight: bold;
+    text-align: center;
+} 
+h2.artTitle {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
 div#article-container {
     width: 100%;
     display: flex;
@@ -5,43 +17,73 @@ div#article-container {
     align-items: center;
     justify-content: space-around;
 }
-div#images {
+section#images {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 40%;
+    justify-content: space-between;
+    width: 45%;
     flex: 1 0 auto;
-    margin: 0px 10px;
+    margin: 0px 20px;
 }
-
+section#images div {
+    padding: 0px 20px 15px;
+}
+section#images div#contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+div#contacts div, 
+div#contacts address, 
+div#contacts div a {
+    font-size: 28px;
+}
 figure {
     text-align: center;
 }
-
-div#articles article {
-    width: 80%;
+section#articles article {
+    width: 90%;
     margin-right: 50px;
 }
-
-div#articles article em,
-div#articles article p, 
-div#articles article li {
+section#articles article:nth-child(2n) {
+    background-color: rgba(141, 21, 21, 0.2);
+    padding: 10px 25px;
+}
+section#articles article:last-child a {
+    display: none;
+}
+section#articles article em,
+section#articles article p, 
+section#articles article li,
+section#images div#mission, 
+section#images div#mission em {
     text-shadow: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;    
 }
-h2.artTitle {
-    font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size: 60px;
-    text-align: center;
-}
 
 @media screen and (max-width: 470px) {
-    div#article-container {
-        flex-direction: column;
-    }
-    article {
-        margin-left: 40px;
-    }
+    #wrapper {width: 100%;}
+    h2#head-title { font-size: 45px;}
+    div#article-container { flex-direction: column; }
+    div#article-container section#articles { padding-left: 10px; }
+    div#article-container section#images div#contacts { flex-direction: column; }
+    h2.artTitle { font-size: 40px;}
+    section#images { width: 100%; margin: 0; padding: 0; }
+    section#images div { padding-left: 10px;}
+    div#contacts div, div#contacts address { text-align: center; }
+    section#articles article { width: 80%; }
+}
+@media screen and (max-width: 780px) {
+    h2#head-title { font-size: 50px;}
+    h2.artTitle { font-size: 40px;}
+    div#article-container { flex-direction: column; }
+    div#article-container section#images { width: 100%; }
+    article { margin-left: 30px; }
+}
+@media screen and (max-width: 1024px) {
+    section#images div#contacts { flex-direction: column; padding: 0; }
+    div#contacts div, div#contacts address { text-align: center; padding: 0; }
+    section#images { width: 40%; margin: 20px 0px 0px 20px;}
+    section#articles { margin-left: 0px; padding-left: 30px }
 }

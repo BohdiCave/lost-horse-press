@@ -12,7 +12,7 @@ export default function Modal({ handleClose, show }) {
     <div className={showHideClassName}>
       <section className="modal-main">
         <div className="close-btn">
-          <a href="/home"><img src="./assets/images/lhp_logo_250x200.png" id="side-logo" alt="logo"/></a>
+          <a href="/"><img src="./assets/images/lhp_logo_250x200.png" id="side-logo" alt="logo"/></a>
           <button id="modal-close" type="button" onClick={handleClose}>
             Close Map
           </button>
@@ -20,8 +20,8 @@ export default function Modal({ handleClose, show }) {
         <div className="site-map">
           <span>NEWS</span>
           <ul className="site-map-menu" id="newsMenu">
-            <li><a href="/news"><FaNewspaper className="icon1" /> Latest News</a></li>
-            <li><a href="/featured"><MdNewReleases className="icon2"/>New Releases</a></li>  
+            <li><a href="/home"><FaNewspaper className="icon1" /> Latest News</a></li>
+            <li><a href="/home"><MdNewReleases className="icon2"/>New Releases</a></li>  
           </ul>
         </div>
         <div className="site-map">
@@ -42,9 +42,9 @@ export default function Modal({ handleClose, show }) {
         <div className="site-map">
           <span>ABOUT</span>
           <ul id="aboutMenu" className="site-map-menu" >
-              <li><a href="/about"><FaInfoCircle className="icon1" /> About LHP</a></li>
-              <li><a href="/mission"><FaBullhorn className="icon2" /> Mission</a></li>
-              <li><a href="/contacts"><MdContactPhone className="icon3" />Contacts</a></li>
+              <li><a href="/about"><FaInfoCircle className="icon1" /> History</a></li>
+              <li><a href="/about#about-mission"><FaBullhorn className="icon2" /> Mission</a></li>
+              <li><a href="/about#about-contacts"><MdContactPhone className="icon3" />Contacts</a></li>
           </ul>
         </div>
        

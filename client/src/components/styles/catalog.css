@@ -1,9 +1,14 @@
 /* main content */
+main, div.off-canvas-wrapper { 
+    margin: 0px; 
+    background: rgb(253, 251, 245)
+}
 div.cat-results { 
     width: 90%; 
     padding: 0px 50px; 
 }
-h2#cat-list, h2#ua-series, h2#na-series, h2#hr-series, h2#np-series, h2#lhp-series {
+h2#cat-list, h2#ua-series, h2#na-series, h2#hr-series, 
+h2#np-series, h2#lhp-series, h2#featured-list {
     margin: 0px 0px 20px; 
     text-align: center;
     font-family: 'Amatic SC', cursive;
@@ -52,7 +57,6 @@ section#series-summary em {
     font-size: 20px;
     font-weight: bold;
 }
-
 #new-poets p, #ukrainian p, #native-american p, #human-rights p {
     text-shadow: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -81,13 +85,13 @@ table#cat tbody tr:nth-child(2n) {
 table#cat th.cover {
     width: 30%; 
 }
-table#cat th.cover .qty {
+table#cat th.cover form.qty {
     display: flex;
     flex-direction:row;
     justify-content: center;
     align-items: center;
 }
-table#cat .qty label {
+table#cat form.qty label {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -103,6 +107,13 @@ table#cat #quantity {
     border: 1px dotted black;
     font-size: 20px;
     background: transparent;
+}
+.shop {
+    color: darkred;
+}
+.cart {
+    margin-right: 10px;
+    vertical-align: middle;
 }
 table#cat th.cover button {
     cursor: pointer;
@@ -141,7 +152,6 @@ table#cat td.blurb em {
     font-size: 18px; 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
 table#cat td.blurb div#blurb p {
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
@@ -199,4 +209,38 @@ table#cat p, table#cat h3 {
     table#cat td.blurb em, table#cat td.blurb p em {
         font-size: 16px;
     }
+}
+@media screen and (max-width: 1024px) {
+    div.cat-results {
+        width: 100%;
+        padding: 0;
+        margin: 0;    
+    } 
+    h2#cat-list { margin: 0;}
+    table#cat {margin-left: 0;}
+    table#cat tbody tr td.blurb {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 50px 30px 0px;
+    }
+    table#cat tbody tr th.cover {
+        padding: 30px 50px 30px 50px;
+    }
+    table#cat h3#title {
+        margin: 10px 20px;
+        text-align: center;
+        font-size: 24px;
+    }
+    table#cat h3#title em {
+        font-family: inherit;
+        font-size: 20px;
+    }
+    table#cat h5#author {
+        font-size: 18px;
+        text-align: center;
+    }
+    section#series-summary { margin-left: 30px;} 
+    section#tabs {margin-left: 0; }
 }

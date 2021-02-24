@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 //components
 import SiteMapBtn from "../SiteMapBtn";
+import Footer from "../Footer";
 // animation
 import styled, {keyframes} from "styled-components";
 import { slideInLeft, zoomIn } from "react-animations";
@@ -16,7 +17,8 @@ import "../styles/landing.css";
 export default function Landing() { 
 
   return (
-    <main>
+    <div id="wrapper">
+      <main>
       <div className="container">
         <header className="side-btn"> 
           <div className="side-btn-left">   
@@ -79,5 +81,7 @@ export default function Landing() {
         </section>
       </div>   
     </main>
+    <Footer />
+    </div>
   );
 }

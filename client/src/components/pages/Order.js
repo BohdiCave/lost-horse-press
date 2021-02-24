@@ -94,12 +94,17 @@ export default function Order() {
                 </address></td>
               </tr>
               <tr>
-                <th><span>Telephone/Email:</span></th>
+                <th><span>Telephone:</span></th>
                 <td>
-                    +1.208.255.4410<br></br>
-                    <Link to="mailto:losthorsepress@mindspring.com">
-                        losthorsepress@mindspring.com
-                    </Link>
+                    +1.208.255.4410
+                </td>
+              </tr>
+              <tr>
+                <th><span> Email:</span></th>
+                <td>
+                  <a href="mailto:losthorsepress@mindspring.com">
+                    losthorsepress@mindspring.com
+                  </a>
                 </td>
               </tr>
             </tbody></table>
@@ -108,7 +113,7 @@ export default function Order() {
             <h4>Orders from Our Distributor</h4>
             <table id="dist"><tbody>
               <tr>
-                <th><span>Mail Orders:</span></th>
+                <th><span>Mail:</span></th>
                 <td><address>
                     University of Washington Press<br></br>
                     PO Box 50096<br></br>
@@ -116,15 +121,15 @@ export default function Order() {
                 </address></td>
               </tr>
               <tr>
-                <th><span>Telephone Orders:</span></th>
+                <th><span>Telephone:</span></th>
                 <td>+1-800-537-5487</td>
               </tr>
               <tr>
-                <th><span>Online Orders:</span></th>
+                <th><span>Online:</span></th>
                 <td>
-                  <Link to="http://www.washington.edu/uwpress">
+                  <a href="http://www.washington.edu/uwpress">
                     www.washington.edu/uwpress
-                  </Link>
+                  </a>
                 </td>
               </tr>
             </tbody></table>
