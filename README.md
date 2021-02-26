@@ -1,5 +1,7 @@
 # Lost Horse Press
 
+![GNU GPL 3.0](https://img.shields.io/badge/license-GNU%20GPL%203.0-darkred)
+
 A full-stack MERN app using MySQL database with Sequelize, Node and Express on the backend, and React and Redux on the frontend.
 
 ## USER stories
