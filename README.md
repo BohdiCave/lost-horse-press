@@ -2,6 +2,19 @@
 
 A full-stack MERN app using MySQL database with Sequelize, Node and Express on the backend, and React and Redux on the frontend.
 
+## USER stories
+
+AS A USER,
+I WANT to visit this website,
+ENJOY an aesthetically pleasant experience,
+and FIND the information I’m interested in,
+potentially PLACING AN ORDER.
+
+AS A PUBLISHER,
+I NEED to have an accessible website,
+to POST updates (events, new releases)
+and MANAGE my CATALOG and ORDERS without much trouble.
+
 ## Technologies Used
 
 - BACKEND
@@ -42,6 +55,8 @@ A full-stack MERN app using MySQL database with Sequelize, Node and Express on t
 ![Screenshot - Landing](./client/public/assets/images/screenshots/lost-horse-press_landing.png)
 
 ![Screenshot 1](./client/public/assets/images/screenshots/lost-horse-press_showcase.png)
+
+### Full responsiveness
 
 ![Screenshot - Mobile](./client/public/assets/images/screenshots/lost-horse-press_mobile-about-pg.png)
 
