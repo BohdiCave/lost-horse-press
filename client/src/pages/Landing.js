@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //components
-import SiteMapBtn from "../SiteMapBtn";
-import Footer from "../Footer";
+import SiteMapBtn from "../components/SiteMapBtn";
+import Footer from "../components/Footer";
 // animation
 import styled, {keyframes} from "styled-components";
 import { slideInLeft, zoomIn } from "react-animations";

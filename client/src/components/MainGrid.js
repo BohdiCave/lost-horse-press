@@ -18,7 +18,7 @@ export default function MainGrid(props) {
   return(
     <main>
       {(address ==="/catalog" || address==="/series" 
-       || address==="/search" || address==="/home") 
+      || address==="/search" || address==="/home") 
       ? (
         <div className="cat-results">
           {address === "/catalog" && <h2 id="cat-list">Catalog Listings</h2>}

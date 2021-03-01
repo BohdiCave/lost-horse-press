@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
 import {FaShoppingCart} from "react-icons/fa";
-import {getCart} from "../../actions/cartActions";
+import {getCart} from "../actions/cartActions";
 
 import "../styles/order.css";
 

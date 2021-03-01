@@ -10,19 +10,19 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 // fonts
 import './app.css';
 // components - pages
-import Home from "./components/pages/Home";
-import Books from "./components/pages/Books";
-import Series from "./components/pages/Series";
-import NoMatch from "./components/pages/NoMatch";
-import Landing from "./components/pages/Landing";
-import About from "./components/pages/About";
-import Order from "./components/pages/Order";
-import Search from "./components/pages/Search";
+import Home from "./pages/Home";
+import Books from "./pages/Books";
+import Series from "./pages/Series";
+import NoMatch from "./pages/NoMatch";
+import Landing from "./pages/Landing";
+import About from "./pages/About";
+import Order from "./pages/Order";
+import Search from "./pages/Search";
 // auth components
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/private-route/Dashboard";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
+import PrivateRoute from "./pages/private-route/PrivateRoute";
+import Dashboard from "./pages/private-route/Dashboard";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

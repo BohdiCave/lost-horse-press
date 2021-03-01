@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/modal.css';
+import '../styles/modal.css';
 import {FaNewspaper, FaListOl, FaShoppingCart, FaAward, FaInfoCircle, FaBullhorn} from "react-icons/fa";
 import {MdNewReleases, MdContactPhone} from "react-icons/md/";
 import {IoLibrarySharp, IoSendSharp} from "react-icons/io5";

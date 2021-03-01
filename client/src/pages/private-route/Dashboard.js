@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Covers from "./Covers";
 import Posts from "./Posts";
-import "../styles/login.css";
+import "../../styles/login.css";
 
 class Dashboard extends Component {
   

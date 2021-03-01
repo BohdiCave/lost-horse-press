@@ -27,11 +27,13 @@ div#wrapper footer {
     flex-direction: row;
     justify-content: center;
 }
-div#wrapper footer div.copyright {
+div#wrapper footer div.landing {
     background: rgba(253, 251, 245, 0.05);
-    padding: 0px 0px 13px;
+    padding: 0px 10px 13px;
+    font-weight: bold;
 }
-div.copyright a {color: rgb(253, 251, 245);}
+div.landing a {color: rgb(253, 251, 245); }
+
 /* Main content */
 div.container {
     width: 100%;

@@ -7,8 +7,9 @@ footer div.copyright {
     padding: 30px; 
     background-color: rgb(253, 251, 245);
 }
-footer a {
+footer div.copyright a {
     padding: 5px;
+    color:rgb(141, 21, 21);
 }
 
 #heart {

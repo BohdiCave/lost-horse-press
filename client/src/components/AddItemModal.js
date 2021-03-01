@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector} from 'react-redux';
-import './styles/modal.css';
+import '../styles/modal.css';
 import { FaShoppingCart } from "react-icons/fa";
 
 export default function Modal({ handleClose, show, id }) {

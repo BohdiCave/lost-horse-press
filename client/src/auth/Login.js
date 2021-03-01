@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Link, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
-import {loginUser} from "../../actions/authActions";
+import {loginUser} from "../actions/authActions";
 import classnames from "classnames";
 import "../styles/login.css";
 

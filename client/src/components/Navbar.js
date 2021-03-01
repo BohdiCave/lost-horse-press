@@ -5,7 +5,7 @@ import SiteMapBtn from "./SiteMapBtn";
 import SearchForm from "./SearchForm";
 import $ from 'jquery';
 import Foundation from 'foundation-sites';
-import './styles/navigation.css';
+import '../styles/navigation.css';
 
 export default function NavBar() {
 
