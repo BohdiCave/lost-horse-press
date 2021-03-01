@@ -27,23 +27,23 @@ export default function NavBar() {
         <div className="top-bar-left">
           <ul className="dropdown menu" data-dropdown-menu>
             <li className="menu-image">
-              <a id="lhp-brand" href="/">
+              <Link id="lhp-brand" to="/">
                 <img src="/assets/images/lhp_logo_250x200.png" alt="Lost Horse Press logo"/>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/home" id="news">News</a>
+              <Link to="/home" id="news">News</Link>
             </li>
             <li>
               <a id="drop-parent" href="#" id="cat">Catalog</a>
               <ul className="menu vertical" id="cat-drop">
-                  <li><a href="/catalog">Catalog listings</a></li>
-                  <li><a href="/series">Book Series</a></li>
-                  <li><a href="/order">Place an Order</a></li>
+                  <li><Link to="/catalog">Catalog listings</Link></li>
+                  <li><Link to="/series">Book Series</Link></li>
+                  <li><Link to="/order">Place an Order</Link></li>
               </ul>
             </li>
-            <li><a href="/submissions" id="subs">Submissions</a></li>
-            <li><a href="/about" id="about">About</a></li>
+            <li><Link to="/submissions" id="subs">Submissions</Link></li>
+            <li><Link to="/about" id="about">About</Link></li>
           </ul>
         </div>
         <div className="top-bar-right">

@@ -49,20 +49,20 @@ export default function App() {
   return (
   <Provider store={store}>
     <Router>
-        <Switch>
-          <Route exact path="/"> <Landing /> </Route>
-          <Route exact path="/home"> <Home /> </Route>
-          <Route exact path="/about"> <About/> </Route>
-          <Route exact path="/order"> <Order/> </Route>
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <Route exact path={["/books", "/catalog"]}> <Books /> </Route>
-          <Route exact path="/series"> <Series/></Route>
-          <Route exact path="/search"> <Search/></Route>
-          {/* <Route exact path="/books/:id"> <Detail /> </Route> */}
-          <Route> <NoMatch /> </Route>
-        </Switch>
+      <Switch>
+        <Route exact path="/"> <Landing /> </Route>
+        <Route exact path="/home"> <Home /> </Route>
+        <Route exact path="/about"> <About/> </Route>
+        <Route exact path="/order"> <Order/> </Route>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <Route exact path={["/books", "/catalog"]}> <Books /> </Route>
+        <Route exact path="/series"> <Series/></Route>
+        <Route exact path="/search"> <Search/></Route>
+        {/* <Route exact path="/books/:id"> <Detail /> </Route> */}
+        <Route> <NoMatch /> </Route>
+      </Switch>
     </Router>
   </Provider>
   );
