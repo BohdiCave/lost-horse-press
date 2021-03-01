@@ -2,6 +2,7 @@
   "name": "lost-horse-press",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://young-chamber-12240.herokuapp.com",
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.21.1",
